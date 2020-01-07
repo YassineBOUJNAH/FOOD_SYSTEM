@@ -3,7 +3,7 @@ package com.mycompany.fds.model;
 
 
 public class Prof {
-       private int id;
+   private int id;
    private String username;
 
     public Prof(int id, String username) {

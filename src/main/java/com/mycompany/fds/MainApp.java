@@ -41,7 +41,7 @@ public class MainApp extends Application {
                 )
         {
                 Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-                ResultSet rs=stmt.executeQuery("select * from prof where id = '1'");
+                ResultSet rs=stmt.executeQuery("select * from prof where id = '2'");
             ArrayList proflist = ProfHelper.getProf(rs);
             Prof p1= (Prof) proflist.get(0);
             System.out.println(p1.getUsername());
