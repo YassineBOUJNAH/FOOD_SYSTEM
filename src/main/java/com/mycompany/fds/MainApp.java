@@ -1,5 +1,14 @@
 package com.mycompany.fds;
 
+import java.sql.DriverManager;
+import com.mycompany.fds.api.DbConnection;
+import com.mycompany.fds.api.ProfHelper;
+import com.mycompany.fds.model.Prof;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
@@ -22,16 +31,29 @@ public class MainApp extends Application {
         stage.show();
     }
 
-    /**
-     * The main() method is ignored in correctly deployed JavaFX application.
-     * main() serves only as fallback in case the application can not be
-     * launched through deployment artifacts, e.g., in IDEs with limited FX
-     * support. NetBeans ignores main().
-     *
-     * @param args the command line arguments
-     */
+ 
     public static void main(String[] args) {
+        
+        System.out.println("hello");
+
+        try (
+                Connection con =DbConnection.getConnection();
+                )
+        {
+                Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+                ResultSet rs=stmt.executeQuery("select * from prof where id = '1'");
+            ArrayList proflist = ProfHelper.getProf(rs);
+            Prof p1= (Prof) proflist.get(0);
+            System.out.println(p1.getUsername());
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    
         launch(args);
-    }
+    
 
 }
+}
+
