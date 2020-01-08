@@ -3,7 +3,9 @@ package com.mycompany.fds;
 import java.sql.DriverManager;
 import com.mycompany.fds.api.DbConnection;
 import com.mycompany.fds.api.ProfHelper;
+import com.mycompany.fds.api.RepasHelper;
 import com.mycompany.fds.model.Prof;
+import com.mycompany.fds.model.Repas;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -40,13 +42,21 @@ public class MainApp extends Application {
                 Connection con =DbConnection.getConnection();
                 )
         {
-                Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-                ResultSet rs=stmt.executeQuery("select * from prof where id = '2'");
+            Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs=stmt.executeQuery("select * from prof where id = '2'");
             ArrayList proflist = ProfHelper.getProf(rs);
             Prof p1= (Prof) proflist.get(0);
             System.out.println(p1.getUsername());
+            
+            //Query pour afficher les repas disponible
+            ResultSet repasDatabase = stmt.executeQuery("select * from repas ");  
+            ArrayList repasList = RepasHelper.getRepas(repasDatabase);
+            //repasList.forEach((repasItem) -> System.out.println(repasItem));
+            Repas r1= (Repas) repasList.get(0);
+            System.out.println(r1.getNomRepas());
+            
 
-
+            
         } catch (SQLException e) {
             e.printStackTrace();
         }
