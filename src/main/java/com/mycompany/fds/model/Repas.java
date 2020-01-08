@@ -1,22 +1,22 @@
 package com.mycompany.fds.model;
 
 public class Repas {
-    private String id;
+    private int idRepas;
     private String nomRepas;
     private float prix;
     
-    public Repas(String id, String nomRepas, float prix){
-        this.id = id;
-        this.nomRepas = id;
+    public Repas(int idRepas, String nomRepas, float prix){
+        this.idRepas = idRepas;
+        this.nomRepas = nomRepas;
         this.prix = prix;
     }
     
-    public String getId() {
-        return id;
+    public int getIdRepas() {
+        return idRepas;
     }
     
-    public void setId(String id) {
-        this.id = id;
+    public void setIdRepas(int idRepas) {
+        this.idRepas = idRepas;
     }
 
     public String getNomRepas() {
