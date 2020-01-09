@@ -2,6 +2,9 @@
 package com.mycompany.fds.api;
 
 import com.mycompany.fds.model.Client;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -21,5 +24,22 @@ public class ClientHelper {
             clients.add(client);
         }
         return clients;
+    }
+    public static void addClient(Client c){
+        String sql= " insert into client"
+                + " values (NULL, ?, ?, ?, ?)";
+        try (Connection conn= DbConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+        ){
+            stmt.setString(1,c.getName());
+            stmt.setString(2,c.getUsername());
+            stmt.setString(3,c.getPassword());
+            stmt.setString(4,c.getEmail());
+
+            stmt.execute();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }

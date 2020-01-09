@@ -1,5 +1,10 @@
 package com.mycompany.fds.model;
 
+import com.mycompany.fds.api.DbConnection;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
 public class Client {
        
     private int id;
@@ -56,8 +61,8 @@ public class Client {
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    
+
+
     
     
 }

@@ -37,7 +37,6 @@ public class MainApp extends Application {
     public static void main(String[] args) {
         
         System.out.println("hello ilyass");
-
         try (
                 Connection con =DbConnection.getConnection();
                 )
