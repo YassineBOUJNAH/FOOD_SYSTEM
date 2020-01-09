@@ -5,23 +5,14 @@
  */
 package com.mycompany.fds;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 
-/**
- * FXML Controller class
- *
- * @author boujnah
- */
-public class FXMLController implements Initializable {
+public class FXMLController {
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+    @FXML
+    public void btn(ActionEvent event){
+        System.out.println("hello");
+    }
     
 }
