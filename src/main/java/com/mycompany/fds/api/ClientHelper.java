@@ -16,7 +16,8 @@ public class ClientHelper {
             String username=rs.getString("username");
             String nom = rs.getString("nom_client");
             String password = rs.getString("password");
-            Client client = new Client(id, username, password);
+            String email = rs.getString("email");
+            Client client = new Client(id,username,nom,email,password);
             clients.add(client);
         }
         return clients;

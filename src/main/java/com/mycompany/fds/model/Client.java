@@ -8,9 +8,12 @@ public class Client {
     private String email;
     private String password;
 
-    public Client(int id, String username, String password) {
+
+    public Client(int id, String username, String name, String email, String password) {
         this.id = id;
         this.username = username;
+        this.name = name;
+        this.email = email;
         this.password = password;
     }
 
