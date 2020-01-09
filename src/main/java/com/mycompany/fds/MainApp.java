@@ -1,11 +1,11 @@
 package com.mycompany.fds;
 
+import com.mycompany.fds.api.ClientHelper;
 import java.sql.DriverManager;
 import com.mycompany.fds.api.DbConnection;
 import com.mycompany.fds.api.ProfHelper;
 import com.mycompany.fds.api.RepasHelper;
-import com.mycompany.fds.model.Prof;
-import com.mycompany.fds.model.Repas;
+import com.mycompany.fds.model.*;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -54,6 +54,13 @@ public class MainApp extends Application {
             //repasList.forEach((repasItem) -> System.out.println(repasItem));
             Repas r1= (Repas) repasList.get(0);
             System.out.println(r1.getNomRepas());
+            
+            ResultSet clientDatabase = stmt.executeQuery("select * from client ");  
+            ArrayList clientList = ClientHelper.getClient(clientDatabase);
+            //repasList.forEach((repasItem) -> System.out.println(repasItem));
+            Client c1= (Client) clientList.get(0);
+            System.out.println(c1.getUsername());
+            
             
 
             

@@ -6,10 +6,12 @@ public class Client {
     private String username;
     private String name;
     private String email;
+    private String password;
 
-    public Client(int id, String username) {
+    public Client(int id, String username, String password) {
         this.id = id;
         this.username = username;
+        this.password = password;
     }
 
     public int getId() {
@@ -43,6 +45,16 @@ public class Client {
     public String getEmail() {
         return email;
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
+    
     
     
 }
