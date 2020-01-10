@@ -1,10 +1,5 @@
 package com.mycompany.fds;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -35,10 +30,7 @@ import javafx.stage.Stage;
 
 import javax.swing.text.html.ImageView;
 
-/**
- *
- * @author oXCToo
- */
+
 public class LoginController implements Initializable {
 
     @FXML
@@ -73,8 +65,9 @@ public class LoginController implements Initializable {
                     Stage stage = (Stage) node.getScene().getWindow();
                     //stage.setMaximized(true);
                     stage.close();
+                    //Open the application home Onboard.fxml
                     Scene scene = new Scene((FXMLLoader.load(getClass().getResource("/fxml/OnBoard.fxml"))));
-                    System.out.println(scene+"this is the scene");
+                    System.out.println(scene+"this is the OnBoard scene");
                     stage.setScene(scene);
                     stage.show();
 
