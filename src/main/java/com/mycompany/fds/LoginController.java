@@ -13,7 +13,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+
+import animatefx.animation.FadeIn;
+import animatefx.animation.SlideInRight;
 import com.mycompany.fds.api.DbConnection;
+import javafx.animation.Transition;
+import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -24,8 +29,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+
+import javax.swing.text.html.ImageView;
 
 /**
  *
@@ -45,7 +53,9 @@ public class LoginController implements Initializable {
     @FXML
     private Button btnSignin;
 
-    /// -- 
+    @FXML
+    private AnchorPane pane;
+
     Connection con = null;
     PreparedStatement preparedStatement = null;
     ResultSet resultSet = null;
@@ -122,7 +132,15 @@ public class LoginController implements Initializable {
         
         return status;
     }
-    
+    @FXML
+    private void registre(){
+        new FadeIn(pane).play();
+        new SlideInRight(pane).play();
+        pane.setLayoutX(200.0);
+
+
+
+    }
     private void setLblError(Color color, String text) {
         lblErrors.setTextFill(color);
         lblErrors.setText(text);
