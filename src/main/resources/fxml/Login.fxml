@@ -70,13 +70,13 @@
                 <Image url="@../images/icons8_XING_100px.png" />
             </image>
         </ImageView>
-      <Pane fx:id="signePane1" layoutX="60.0" layoutY="100.0">
+      <Pane fx:id="signePane1" layoutX="74.0" layoutY="100.0">
          <children>
             <TextField fx:id="usernameField" layoutX="7.0" prefHeight="34.0" prefWidth="275.0" promptText="username " />
             <TextField fx:id="emailField" layoutX="7.0" layoutY="50.0" prefHeight="34.0" prefWidth="275.0" promptText="email" />
             <TextField fx:id="nameField" layoutX="7.0" layoutY="100.0" prefHeight="34.0" prefWidth="275.0" promptText="full name" />
             <PasswordField fx:id="passwordField" layoutX="7.0" layoutY="170.0" prefHeight="34.0" prefWidth="275.0" promptText="password" stylesheets="@../styles/fullpackstyling.css" />
-            <Button fx:id="bn" layoutX="70.0" layoutY="220.0" mnemonicParsing="false" onAction="#btn" onMouseClicked="#handleButtonAction" prefHeight="34.0" prefWidth="137.0" stylesheets="@../styles/fullpackstyling.css" text="Sign in" />
+            <Button fx:id="bn" layoutX="70.0" layoutY="220.0" mnemonicParsing="false" onAction="#btn" onMouseClicked="#handleButtonAction" prefHeight="34.0" prefWidth="137.0" stylesheets="@../styles/fullpackstyling.css" text="Sign up" />
             <Button fx:id="btnSignin2" layoutX="4.0" layoutY="296.0" mnemonicParsing="false" onAction="#registre2" prefHeight="34.0" prefWidth="275.0" stylesheets="@../styles/fullpackstyling.css" text="Sign in" />
             <Separator layoutY="270.0" prefHeight="7.0" prefWidth="275.0" />
             <Label alignment="CENTER" layoutX="122.0" layoutY="262.0" prefHeight="23.0" prefWidth="31.0" style="-fx-background-color: #fff;" text="Or" textFill="#5b5a5a">
