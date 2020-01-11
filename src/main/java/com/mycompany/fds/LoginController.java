@@ -1,6 +1,5 @@
 package com.mycompany.fds;
 
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -17,9 +16,14 @@ import java.util.concurrent.TimeUnit;
 
 import animatefx.animation.FadeIn;
 import animatefx.animation.SlideInRight;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
+import com.mycompany.fds.api.ClientHelper;
 import com.mycompany.fds.api.DbConnection;
+import com.mycompany.fds.model.Client;
 import javafx.animation.Transition;
 import javafx.animation.TranslateTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -28,6 +32,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -177,5 +182,21 @@ public class LoginController implements Initializable {
         System.out.println(scene+"this is the OnBoard scene");
         stage.setScene(scene);
         stage.show();
+    }
+
+    /// sign up
+    @FXML
+    private TextField emailField;
+    @FXML
+    private TextField usernameField;
+    @FXML
+    private TextField nameField;
+    @FXML
+    private PasswordField passwordField;
+
+    public void btn(ActionEvent event){
+        System.out.println("hello");
+        Client c= new Client(-1,usernameField.getText(),nameField.getText(),emailField.getText(),passwordField.getText());
+        ClientHelper.addClient(c);
     }
 }
