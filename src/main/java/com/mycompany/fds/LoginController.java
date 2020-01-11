@@ -199,4 +199,23 @@ public class LoginController implements Initializable {
         Client c= new Client(-1,usernameField.getText(),nameField.getText(),emailField.getText(),passwordField.getText());
         ClientHelper.addClient(c);
     }
+
+    public void registre2(ActionEvent actionEvent) {
+
+        TranslateTransition slide = new TranslateTransition();
+        slide.setDuration(Duration.seconds(0.7D));
+        slide.setNode(this.pane);
+        slide.setToX(0.0D);
+        slide.play();
+        this.pane.setTranslateX(0.0D);
+        signePane1.setVisible(false);
+        Timer chrono = new Timer();
+        chrono.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                signePane.setVisible(true);
+
+            }
+        },1000);
+    }
 }
