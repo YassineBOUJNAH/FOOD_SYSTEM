@@ -2,6 +2,6 @@
 package com.mycompany.fds;
 
 
-public class OnBoard {
+public class OnBoardController {
     
 }

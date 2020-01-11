@@ -1,17 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="564.0" prefWidth="1101.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.fds.HomeController">
 
+<AnchorPane id="AnchorPane" prefHeight="564.0" prefWidth="1101.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.fds.HomeController">
+   <children>
+      <Pane layoutX="-7.0" layoutY="-42.0" prefHeight="209.0" prefWidth="327.0" style="-fx-background-color: #34495e;" />
+      <VBox layoutY="159.0" prefHeight="417.0" prefWidth="320.0" style="-fx-background-color: #34495e;">
+         <children>
+            <JFXButton prefHeight="83.0" prefWidth="320.0" style="-fx-background-color: #2c3e50;" text="Menu" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton prefHeight="83.0" prefWidth="320.0" style="-fx-background-color: #2c3e50;" text="Mon compte" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton prefHeight="83.0" prefWidth="320.0" style="-fx-background-color: #2c3e50;" text="Mes commandes" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton prefHeight="83.0" prefWidth="320.0" style="-fx-background-color: #2c3e50;" text="Livraison" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton prefHeight="83.0" prefWidth="320.0" style="-fx-background-color: #2c3e50;" text="Se déconnecter" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="20.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </VBox>
+      <Pane layoutX="319.0" layoutY="-2.0" prefHeight="47.0" prefWidth="784.0" style="-fx-background-color: #8e44ad;" />
+      <Text fill="#d35400" layoutX="607.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nos restaurants">
+         <font>
+            <Font name="BebasNeueRegular" size="43.0" />
+         </font>
+      </Text>
+      <Pane layoutX="360.0" layoutY="182.0" prefHeight="249.0" prefWidth="196.0" style="-fx-background-color: #2980b9;">
+         <children>
+            <ImageView fitHeight="196.0" fitWidth="214.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/food/burger.jpg" />
+               </image>
+            </ImageView>
+            <Text layoutX="13.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Burger King" textAlignment="CENTER" wrappingWidth="170.13674926757812">
+               <font>
+                  <Font name="Calibri Bold" size="27.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="606.0" layoutY="184.0" prefHeight="249.0" prefWidth="196.0" style="-fx-background-color: #2980b9;">
+         <children>
+            <ImageView fitHeight="196.0" fitWidth="204.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/food/burger.jpg" />
+               </image>
+            </ImageView>
+            <Text layoutX="13.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tacos Lyon" textAlignment="CENTER" wrappingWidth="170.13674926757812">
+               <font>
+                  <Font name="Calibri Bold" size="27.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="860.0" layoutY="189.0" prefHeight="249.0" prefWidth="196.0" style="-fx-background-color: #2980b9;">
+         <children>
+            <ImageView fitHeight="196.0" fitWidth="214.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/food/burger.jpg" />
+               </image>
+            </ImageView>
+            <Text layoutX="13.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KFC" textAlignment="CENTER" wrappingWidth="170.13674926757812">
+               <font>
+                  <Font name="Calibri Bold" size="27.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>
