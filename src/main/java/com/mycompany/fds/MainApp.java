@@ -28,7 +28,7 @@ public class MainApp extends Application {
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/Styles.css");
         
-        stage.setTitle("JavaFX and Maven");
+        stage.setTitle("Khanz' w Bnin");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
@@ -48,7 +48,7 @@ public class MainApp extends Application {
             Prof p1= (Prof) proflist.get(0);
             System.out.println(p1.getUsername());
             
-            //Query pour afficher les repas disponible
+            //Query to show disponible foods
             ResultSet repasDatabase = stmt.executeQuery("select * from repas ");  
             ArrayList repasList = RepasHelper.getRepas(repasDatabase);
             //repasList.forEach((repasItem) -> System.out.println(repasItem));
