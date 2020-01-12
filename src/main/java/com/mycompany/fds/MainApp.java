@@ -23,7 +23,7 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/OnBoard.fxml"));
         
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/Styles.css");
@@ -59,9 +59,6 @@ public class MainApp extends Application {
             //repasList.forEach((repasItem) -> System.out.println(repasItem));
             Client c1= (Client) clientList.get(0);
             System.out.println(c1.getUsername());
-            
-            
-
             
         } catch (SQLException e) {
             e.printStackTrace();

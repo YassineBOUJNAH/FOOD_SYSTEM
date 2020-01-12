@@ -6,39 +6,54 @@ import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import static javafx.fxml.FXMLLoader.*;
 
-public class OnBoardController {
-    @FXML private JFXButton menuTab;
-    @FXML private JFXButton myOrdersTab;
-    @FXML private JFXButton myDeliveryTab;
-    @FXML private JFXButton logoutTab;
+public class OnBoardController implements Initializable {
+    @FXML private JFXButton menuButton;
+    @FXML private JFXButton myAccountButton;
+    @FXML private JFXButton myOrdersButton;
+    @FXML private JFXButton myDeliveryButton;
+    @FXML private JFXButton logoutButton;
+    @FXML private Pane menuPane;
+    @FXML private Pane myAccountPane;
+    @FXML private Pane myOrdersPane;
+    @FXML private Pane myDeliveryPane;
 
-    public void myAccountButton(ActionEvent event){
-        System.out.println("Redirecting to my account scene tab...");
-        //add you loading or delays - ;-)
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        //stage.setMaximized(true);
-        stage.close();
-        //Open the application home Onboard.fxml
-        Scene scene = null;
-        try {
-            scene = new Scene((load(getClass().getResource("/fxml/MyAccount.fxml"))));
-            System.out.println(scene+"this is the client informations scene");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+    public void handleClicks(ActionEvent actionEvent) {
+        if (actionEvent.getSource() == menuButton) {
+            menuPane.toFront();
         }
-
-
+        if (actionEvent.getSource() == myAccountButton) {
+            myAccountPane.setStyle("-fx-background-color : #53639F");
+            myAccountPane.toFront();
+        }
+        if (actionEvent.getSource() == myOrdersButton) {
+            myOrdersPane.setStyle("-fx-background-color : #02030A");
+            myOrdersPane.toFront();
+        }
+        if(actionEvent.getSource() == myDeliveryButton)
+        {
+            myDeliveryPane.setStyle("-fx-background-color : #464F67");
+            myDeliveryPane.toFront();
+        }
     }
 
+
+
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
 }
