@@ -43,7 +43,7 @@ public class OnBoardController implements Initializable {
         }
         if(actionEvent.getSource() == myDeliveryButton)
         {
-            myDeliveryPane.setStyle("-fx-background-color : #464F67");
+            //myDeliveryPane.setStyle("-fx-background-color : #464F67");
             myDeliveryPane.toFront();
         }
     }
@@ -54,6 +54,26 @@ public class OnBoardController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        Node[] nodes = new Node[10];
+        for (int i = 0; i < nodes.length; i++) {
+            try {
+
+                final int j = i;
+                nodes[i] = FXMLLoader.load(getClass().getResource("/fxml/FoodList.fxml"));
+
+                //give the items some effect
+
+                nodes[i].setOnMouseEntered(event -> {
+                    nodes[j].setStyle("-fx-background-color : #0A0E3F");
+                });
+                nodes[i].setOnMouseExited(event -> {
+                    nodes[j].setStyle("-fx-background-color : #02030A");
+                });
+                myDeliveryPane.getChildren().add(nodes[i]);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
     }
 }
