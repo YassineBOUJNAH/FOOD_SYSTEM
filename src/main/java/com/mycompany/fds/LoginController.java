@@ -14,13 +14,14 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 
-import animatefx.animation.FadeIn;
-import animatefx.animation.SlideInRight;
+import animatefx.animation.*;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.mycompany.fds.api.ClientHelper;
 import com.mycompany.fds.api.DbConnection;
 import com.mycompany.fds.model.Client;
+import javafx.animation.Animation;
+import javafx.animation.Timeline;
 import javafx.animation.Transition;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
@@ -47,6 +48,8 @@ import javax.swing.text.html.ImageView;
 
 public class LoginController implements Initializable {
 
+    @FXML
+    private AnchorPane logoensias;
     @FXML
     private Button bn;
     @FXML
@@ -90,6 +93,7 @@ public class LoginController implements Initializable {
                     Scene scene = new Scene((FXMLLoader.load(getClass().getResource("/fxml/OnBoard.fxml"))));
                     System.out.println(scene+"this is the OnBoard scene");
                     stage.setScene(scene);
+                    stage.setResizable(true);
                     stage.show();
 
                 } catch (IOException ex) {
@@ -156,6 +160,7 @@ public class LoginController implements Initializable {
         slide.play();
         this.pane.setTranslateX(-309.0D);
         signePane.setVisible(false);
+        new FadeInLeft(logoensias).play();
         Timer chrono = new Timer();
         chrono.schedule(new TimerTask() {
                             @Override
@@ -164,6 +169,7 @@ public class LoginController implements Initializable {
 
                             }
                         },1000);
+
     }
     private void setLblError(Color color, String text) {
         lblErrors.setTextFill(color);
@@ -209,6 +215,7 @@ public class LoginController implements Initializable {
         slide.play();
         this.pane.setTranslateX(0.0D);
         signePane1.setVisible(false);
+        new FadeInRight(logoensias).play();
         Timer chrono = new Timer();
         chrono.schedule(new TimerTask() {
             @Override
