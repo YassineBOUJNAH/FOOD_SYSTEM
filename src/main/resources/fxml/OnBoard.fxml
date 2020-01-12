@@ -9,33 +9,32 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="564.0" prefWidth="1101.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.fds.HomeController">
+<AnchorPane id="AnchorPane" prefHeight="564.0" prefWidth="1101.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.fds.OnBoardController">
    <children>
       <Pane layoutX="-7.0" layoutY="-42.0" prefHeight="209.0" prefWidth="327.0" style="-fx-background-color: #34495e;" />
       <VBox layoutY="159.0" prefHeight="417.0" prefWidth="320.0" style="-fx-background-color: #34495e;">
          <children>
-            <JFXButton prefHeight="83.0" prefWidth="320.0" style="-fx-background-color: #2c3e50;" text="Menu" textFill="WHITE">
+            <JFXButton fx:id="menuTab" prefHeight="83.0" prefWidth="320.0" style="-fx-background-color: #2c3e50;" text="Menu" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS Bold" size="20.0" />
                </font>
             </JFXButton>
-            <JFXButton prefHeight="83.0" prefWidth="320.0" style="-fx-background-color: #2c3e50;" text="Mon compte" textFill="WHITE">
+            <JFXButton fx:id="myAccountTab" prefHeight="83.0" prefWidth="320.0" onAction="#myAccountButton" style="-fx-background-color: #2c3e50;" text="Mon compte" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS Bold" size="20.0" />
                </font>
             </JFXButton>
-            <JFXButton prefHeight="83.0" prefWidth="320.0" style="-fx-background-color: #2c3e50;" text="Mes commandes" textFill="WHITE">
+            <JFXButton fx:id="myOrdersTab" prefHeight="83.0" prefWidth="320.0" style="-fx-background-color: #2c3e50;" text="Mes commandes" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS Bold" size="20.0" />
                </font>
             </JFXButton>
-            <JFXButton prefHeight="83.0" prefWidth="320.0" style="-fx-background-color: #2c3e50;" text="Livraison" textFill="WHITE">
+            <JFXButton fx:id="myDeliveryTab" prefHeight="83.0" prefWidth="320.0" style="-fx-background-color: #2c3e50;" text="Livraison" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS Bold" size="20.0" />
                </font>
             </JFXButton>
-            <JFXButton prefHeight="83.0" prefWidth="320.0" style="-fx-background-color: #2c3e50;" text="Se déconnecter" textFill="WHITE">
+            <JFXButton fx:id="logoutTab" prefHeight="83.0" prefWidth="320.0" style="-fx-background-color: #2c3e50;" text="Se déconnecter" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS Bold" size="20.0" />
                </font>
