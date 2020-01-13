@@ -34,7 +34,8 @@ public class MainApp extends Application {
 
  
     public static void main(String[] args) {
-        
+
+        System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
         System.out.println("hello ilyass");
         try (
                 Connection con =DbConnection.getConnection();

@@ -38,7 +38,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -224,5 +227,25 @@ public class LoginController implements Initializable {
 
             }
         },1000);
+    }
+
+    public void fbOnClick(ActionEvent event) {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+
+        WebView browser = new WebView();
+        WebEngine webEngine = browser.getEngine();
+
+        com.sun.javafx.webkit.WebConsoleListener.setDefaultListener(
+                (webView, message, lineNumber, sourceId)-> System.out.println("Console: [" + sourceId + ":" + lineNumber + "] " + message)
+        );
+
+        webEngine.load("http://localhost/login/");
+        StackPane root = new StackPane();
+        root.getChildren().add(browser);
+        webEngine.setJavaScriptEnabled(true);
+        stage.setScene(new Scene(root, 600, 600));
+        stage.show();
+        webEngine.setJavaScriptEnabled(true);
     }
 }

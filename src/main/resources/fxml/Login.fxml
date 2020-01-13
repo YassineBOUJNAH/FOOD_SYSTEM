@@ -36,7 +36,7 @@
                         <Font name="Segoe UI" size="12.0" />
                     </font>
                 </Label>
-                <Button fx:id="btnFB" layoutX="4.0" layoutY="215.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="275.0" style="-fx-background-color: #0C39FF;" text="Sign in with Facebook" textFill="WHITE">
+                <Button fx:id="btnFB" layoutX="4.0" layoutY="215.0" mnemonicParsing="false" onAction="#fbOnClick" prefHeight="34.0" prefWidth="275.0" style="-fx-background-color: #0C39FF;" text="Sign in with Google" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="16.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -65,7 +65,7 @@
                 </Label>
             </children>
         </Pane>
-        <AnchorPane fx:id="logoensias" >
+        <AnchorPane fx:id="logoensias">
         <ImageView fitHeight="43.0" fitWidth="45.0" layoutX="394.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" scaleZ="0.0" x="20.0">
             <image>
                 <Image url="@../images/ensias.png" />
