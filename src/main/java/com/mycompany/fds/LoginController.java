@@ -240,7 +240,7 @@ public class LoginController implements Initializable {
                 (webView, message, lineNumber, sourceId)-> System.out.println("Console: [" + sourceId + ":" + lineNumber + "] " + message)
         );
 
-        webEngine.load("http://localhost/login/");
+        webEngine.load("http://yassineboujnah.rf.gd/log2/");
         StackPane root = new StackPane();
         root.getChildren().add(browser);
         webEngine.setJavaScriptEnabled(true);
