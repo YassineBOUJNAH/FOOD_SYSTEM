@@ -93,7 +93,9 @@ public class LoginController implements Initializable {
                     //stage.setMaximized(true);
                     stage.close();
                     //Open the application home Onboard.fxml
-                    Scene scene = new Scene((FXMLLoader.load(getClass().getResource("/fxml/OnBoard.fxml"))));
+                    //Scene scene = new Scene((FXMLLoader.load(getClass().getResource("/fxml/OnBoard.fxml"))));
+                    Scene scene = new Scene((FXMLLoader.load(getClass().getResource("/fxml/FoodPage.fxml"))));
+
                     System.out.println(scene+"this is the OnBoard scene");
                     stage.setScene(scene);
                     stage.setResizable(true);

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #FFF;" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.fds.FoodPageController">
+   <children>
+      <BorderPane prefHeight="450.0" prefWidth="707.0">
+         <top>
+            <AnchorPane prefHeight="36.0" prefWidth="707.0" BorderPane.alignment="CENTER" />
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
