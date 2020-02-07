@@ -54,7 +54,7 @@ public class MainApp extends Application {
             ArrayList repasList = RepasHelper.getRepas(repasDatabase);
             //repasList.forEach((repasItem) -> System.out.println(repasItem));
             Repas r1= (Repas) repasList.get(0);
-            System.out.println(r1.getNomRepas());
+            System.out.println("Description: "+r1.getDescription());
             
             ResultSet clientDatabase = stmt.executeQuery("select * from client ");  
             ArrayList clientList = ClientHelper.getClient(clientDatabase);
