@@ -13,7 +13,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class FoodPageController implements Initializable {
-
+    @FXML
+    public AnchorPane mainpane;
     @FXML
     private JFXButton bar2;
     @FXML
@@ -35,6 +36,8 @@ public class FoodPageController implements Initializable {
         slide.setNode(paneslide);
         slide.setToX(0);
         slide.play();
+        mainpane.toBack();
+        paneslide.toFront();
         paneslide.setTranslateX(-153);
         slide.setOnFinished((ActionEvent e) -> {
             bar1.setVisible(false);
@@ -48,6 +51,8 @@ public class FoodPageController implements Initializable {
         slide.setNode(paneslide);
         slide.setToX(-153);
         slide.play();
+        mainpane.toBack();
+        paneslide.toFront();
         paneslide.setTranslateX(0);
         slide.setOnFinished((ActionEvent e) -> {
             bar1.setVisible(true);

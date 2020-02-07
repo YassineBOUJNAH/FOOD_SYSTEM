@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
@@ -41,6 +42,13 @@
          <left>
             <AnchorPane fx:id="paneslide" prefHeight="410.0" prefWidth="153.0" style="-fx-background-color: yellow;" BorderPane.alignment="CENTER" />
          </left>
+
+            <AnchorPane fx:id="mainpane" layoutX="10" layoutY="37.0" prefHeight="200.0" prefWidth="901.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="31.0" layoutY="14.0" mnemonicParsing="false" text="Button" />
+               </children>
+            </AnchorPane>
+
       </BorderPane>
    </children>
 </AnchorPane>
