@@ -39,7 +39,19 @@
                </children></AnchorPane>
          </top>
          <left>
-            <AnchorPane fx:id="paneslide" prefHeight="410.0" prefWidth="153.0" style="-fx-background-color: yellow;" BorderPane.alignment="CENTER" />
+            <AnchorPane fx:id="paneslide" prefHeight="410.0" prefWidth="153.0" style="-fx-background-color: #464646;" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton prefHeight="36.0" prefWidth="150.0" text="Logout" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton layoutY="50" prefHeight="36.0" prefWidth="150.0" text="About us" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="INFO" />
+                     </graphic>
+                  </JFXButton>
+               </children></AnchorPane>
          </left>
       </BorderPane>
       <AnchorPane fx:id="homePane" layoutY="45.0" prefHeight="665.0" prefWidth="901.0">
