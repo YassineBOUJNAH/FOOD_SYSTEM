@@ -1,4 +1,4 @@
-package com.mycompany.fds;
+package com.mycompany.fds.Controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;

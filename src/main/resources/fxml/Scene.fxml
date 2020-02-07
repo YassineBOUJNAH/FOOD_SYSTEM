@@ -5,7 +5,7 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.fds.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.fds.Controller.FXMLController">
    <children>
       <JFXButton layoutX="110.0" layoutY="416.0" onAction="#btn" prefHeight="48.0" prefWidth="199.0" text="SignUP" />
       <JFXTextField fx:id="emailField" layoutX="123.0" layoutY="270.0" promptText="Email" />

@@ -1,5 +1,5 @@
 
-package com.mycompany.fds;
+package com.mycompany.fds.Controller;
 
 
 import com.jfoenix.controls.JFXButton;

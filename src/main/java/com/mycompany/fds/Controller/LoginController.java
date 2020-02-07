@@ -1,4 +1,4 @@
-package com.mycompany.fds;
+package com.mycompany.fds.Controller;
 
 import java.io.IOException;
 import java.net.URL;

@@ -2,27 +2,26 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #FFF;" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.fds.FoodPageController">
+<AnchorPane prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #FFF;" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.fds.Controller.FoodPageController">
    <children>
       <BorderPane prefHeight="700.0" prefWidth="900.0">
          <top>
             <AnchorPane prefHeight="36.0" prefWidth="707.0" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton layoutX="255.0" prefHeight="39.0" prefWidth="141.0" styleClass="d" text="Home">
+                  <JFXButton fx:id="buttonHome" layoutX="255.0" onAction="#onHomeAction" prefHeight="39.0" prefWidth="141.0" styleClass="d" text="Home">
                      <graphic>
                         <FontAwesomeIconView glyphName="HOME" size="2em" />
                      </graphic>
                   </JFXButton>
-                  <JFXButton layoutX="396.0" layoutY="1.0" prefHeight="39.0" prefWidth="141.0" styleClass="p" text="Paniers">
+                  <JFXButton fx:id="buttonPanier" layoutX="396.0" layoutY="1.0" onAction="#OnPaniersAction" prefHeight="39.0" prefWidth="141.0" styleClass="p" text="Paniers">
                      <graphic>
                         <FontAwesomeIconView glyphName="SHOPPING_CART" size="2em" />
                      </graphic>
                   </JFXButton>
-                  <JFXButton layoutX="537.0" prefHeight="38.0" prefWidth="141.0" styleClass="r" text="Profile">
+                  <JFXButton fx:id="ButtonProfile" layoutX="537.0" onAction="#OnProfileAction" prefHeight="38.0" prefWidth="141.0" styleClass="r" text="Profile">
                      <graphic>
                         <FontAwesomeIconView glyphName="USER" size="2em" />
                      </graphic>
@@ -42,13 +41,21 @@
          <left>
             <AnchorPane fx:id="paneslide" prefHeight="410.0" prefWidth="153.0" style="-fx-background-color: yellow;" BorderPane.alignment="CENTER" />
          </left>
-
-            <AnchorPane fx:id="mainpane" layoutX="10" layoutY="37.0" prefHeight="200.0" prefWidth="901.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Button layoutX="31.0" layoutY="14.0" mnemonicParsing="false" text="Button" />
-               </children>
-            </AnchorPane>
-
       </BorderPane>
+      <AnchorPane fx:id="homePane" layoutY="45.0" prefHeight="665.0" prefWidth="901.0">
+         <children>
+            <fx:include source="MainFood.fxml" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="profilePane" layoutY="45.0" prefHeight="665.0" prefWidth="901.0">
+         <children>
+            <fx:include source="ProfileFood.fxml" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panierPane" layoutY="45.0" prefHeight="665.0" prefWidth="901.0">
+         <children>
+            <fx:include source="PanierFood.fxml" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
