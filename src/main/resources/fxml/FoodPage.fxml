@@ -1,13 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #FFF;" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.fds.FoodPageController">
+<AnchorPane prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #FFF;" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.fds.FoodPageController">
    <children>
-      <BorderPane prefHeight="450.0" prefWidth="707.0">
+      <BorderPane prefHeight="700.0" prefWidth="900.0">
          <top>
-            <AnchorPane prefHeight="36.0" prefWidth="707.0" BorderPane.alignment="CENTER" />
+            <AnchorPane prefHeight="36.0" prefWidth="707.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton layoutX="255.0" prefHeight="39.0" prefWidth="141.0" styleClass="d" text="Home">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="HOME" size="2em" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton layoutX="396.0" layoutY="1.0" prefHeight="39.0" prefWidth="141.0" styleClass="p" text="Paniers">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SHOPPING_CART" size="2em" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton layoutX="537.0" prefHeight="38.0" prefWidth="141.0" styleClass="r" text="Profile">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="USER" size="2em" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="bar2" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#run2" prefHeight="39.0" prefWidth="48.0">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CHEVRON_LEFT" glyphStyle="CHEVRON_LEFT" size="2em" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="bar1" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#run1" prefHeight="39.0" prefWidth="48.0">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="BARS" size="2em" />
+                     </graphic>
+                  </JFXButton>
+               </children></AnchorPane>
          </top>
+         <left>
+            <AnchorPane fx:id="paneslide" prefHeight="410.0" prefWidth="153.0" style="-fx-background-color: yellow;" BorderPane.alignment="CENTER" />
+         </left>
       </BorderPane>
    </children>
 </AnchorPane>

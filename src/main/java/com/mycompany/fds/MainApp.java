@@ -17,6 +17,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 
 public class MainApp extends Application {
@@ -27,6 +28,7 @@ public class MainApp extends Application {
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/Styles.css");
         stage.setTitle("Khanz' w Bnin");
+       // stage.initStyle(StageStyle.TRANSPARENT);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
@@ -46,7 +48,7 @@ public class MainApp extends Application {
             ArrayList proflist = ProfHelper.getProf(rs);
             Prof p1= (Prof) proflist.get(0);
             System.out.println(p1.getUsername());
-            
+
             //Query to show disponible foods
             ResultSet repasDatabase = stmt.executeQuery("select * from repas ");  
             ArrayList repasList = RepasHelper.getRepas(repasDatabase);

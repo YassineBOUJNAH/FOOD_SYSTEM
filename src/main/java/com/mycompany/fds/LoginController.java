@@ -43,6 +43,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 import javax.swing.*;
@@ -91,11 +92,12 @@ public class LoginController implements Initializable {
                     Node node = (Node) event.getSource();
                     Stage stage = (Stage) node.getScene().getWindow();
                     //stage.setMaximized(true);
+
                     stage.close();
                     //Open the application home Onboard.fxml
                     //Scene scene = new Scene((FXMLLoader.load(getClass().getResource("/fxml/OnBoard.fxml"))));
                     Scene scene = new Scene((FXMLLoader.load(getClass().getResource("/fxml/FoodPage.fxml"))));
-
+                    scene.getStylesheets().add("/styles/Styles.css");
                     System.out.println(scene+"this is the OnBoard scene");
                     stage.setScene(scene);
                     stage.setResizable(true);
