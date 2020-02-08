@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="240.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.fds.Controller.MainFoodController">
+<AnchorPane onMouseClicked="#repaClick" prefHeight="240.0" prefWidth="250.0" styleClass="d" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.fds.Controller.MainFoodController">
    <children>
-      <ImageView fx:id="imgRepas" fitHeight="150.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="nomRepas" layoutX="14.0" layoutY="150.0" prefHeight="44.0" prefWidth="207.0" text="Food Name" />
-      <Label fx:id="description" layoutX="14.0" layoutY="194.0" text="Label" />
-      <Label fx:id="prix" layoutX="171.0" layoutY="186.0" text="Label" />
+      <ImageView fx:id="imgRepas" fitHeight="150.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/ensias.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="nomRepas" alignment="CENTER" layoutX="14.0" layoutY="150.0" prefHeight="44.0" prefWidth="207.0" style="-fx-font-weight: bold; -fx-text-alignment: right;" styleClass="d" stylesheets="@../styles/Styles.css" text="Food Name" underline="true" />
+      <Label fx:id="nomRepas1" layoutX="14.0" layoutY="195.0" minHeight="44.0" minWidth="207.0" prefHeight="44.0" prefWidth="207.0" text="Food Name" />
    </children>
 </AnchorPane>

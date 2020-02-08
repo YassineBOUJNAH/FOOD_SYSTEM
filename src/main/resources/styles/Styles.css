@@ -13,3 +13,6 @@
     -fx-border-color: #cc0033;
     -fx-border-width: 0px 0px 3px 0px;
 }
+.h:hover{
+    -fx-background-color: #f8ecc2;
+}

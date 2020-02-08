@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.awt.*;
@@ -49,13 +50,13 @@ public class MainFoodController implements Initializable {
             Repas r1= (Repas) repasList.get(0);
             Repas r2= (Repas) repasList.get(1);
 
-            AnchorPane Card1 = FoodCard.creat(r1.getNomRepas(), r1.getImg());
-            AnchorPane Card2 = FoodCard.creat(r2.getNomRepas(), r2.getImg());
+            AnchorPane Card1 = FoodCard.creat(r1.getNomRepas() , r1.getImg());
+            //AnchorPane Card2 = FoodCard.creat(r2.getNomRepas(), r2.getImg());
             System.out.println(r2.getImg());
-            Card2.setLayoutY(120);
+            //Card2.setLayoutY(120);
 
            paneA.getChildren().add(Card1);
-            paneA.getChildren().add(Card2);
+            //paneA.getChildren().add(Card2);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (URISyntaxException e) {
@@ -67,4 +68,5 @@ public class MainFoodController implements Initializable {
         }
 
     }
+
 }

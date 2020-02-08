@@ -1,9 +1,11 @@
 package com.mycompany.fds.View;
 
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.ImageViewBuilder;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.awt.image.BufferedImage;
@@ -13,29 +15,55 @@ import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+import static javafx.scene.text.TextAlignment.CENTER;
+import static javafx.scene.text.TextAlignment.LEFT;
+
 
 public class FoodCard {
 
     public static AnchorPane creat(String titre,String img) throws MalformedURLException, URISyntaxException, FileNotFoundException {
         AnchorPane anchorPane = new AnchorPane();
-        anchorPane.setPrefHeight(240);
-        anchorPane.setPrefWidth(250);
-        Image img2 = new Image(img);
+        anchorPane.setPrefHeight(110);
+        anchorPane.setPrefWidth(140);
+        Image img2 = new Image("images/ensias2.png");
         ImageView image = new ImageView(img2);
 
        // image.setImage(img2);
-      //  image.setFitHeight(250);
-        //image.setFitWidth(150);
+        image.setFitHeight(110);
+        image.setFitWidth(140);
+        image.setPickOnBounds(true);
+
 
         Label lab = new Label();
-        lab.setLayoutX(14);
-        lab.setLayoutX(150);
+        lab.setLayoutX(5);
+        lab.setLayoutY(100);
         lab.setPrefHeight(44);
-        lab.setPrefWidth(207);
-        lab.setText(titre);
+        lab.setPrefWidth(140);
+        lab.setText(" "+titre);
+        lab.setStyle("-fx-font-weight: bold;" );
+        lab.setTextAlignment( CENTER );
+        lab.setAlignment(Pos.CENTER);
+
+        Label lab2 = new Label();
+        lab2.setLayoutX(5);
+        lab2.setLayoutY(120);
+        lab2.setPrefHeight(44);
+        lab2.setPrefWidth(140);
+        lab2.setText(titre);
+        anchorPane.getStylesheets().add("/styles/Styles.css");
 
         anchorPane.getChildren().add(image);
         anchorPane.getChildren().add(lab);
+        anchorPane.getChildren().add(lab2);
+        anchorPane.getStyleClass().add("h");
+
+        anchorPane.setOnMouseClicked((e) -> {
+            System.out.println("hello");
+        });
+
         return anchorPane;
     }
+
+
+
 }
