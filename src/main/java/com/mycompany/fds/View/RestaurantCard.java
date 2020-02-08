@@ -23,10 +23,10 @@ public class RestaurantCard {
 
         // image.setImage(img2);
         image.setFitHeight(110);
-        image.setFitWidth(144);
+        image.setFitWidth(155);
         image.setPickOnBounds(true);
         image.setLayoutX(2);
-
+        image.getStyleClass().add(img);
 
         Label lab = new Label();
         lab.setLayoutX(5);

@@ -8,6 +8,7 @@ import com.mycompany.fds.api.*;
 import com.mycompany.fds.model.Repas;
 import com.mycompany.fds.model.Rest;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -60,18 +61,11 @@ public class MainFoodController implements Initializable {
 //restaurant
             ResultSet restDatabase = stmt.executeQuery("select * from restaurant");
             ArrayList restList = RestHelper.getRest(restDatabase);
+            gridpane.setHgap(10); //horizontal gap in pixels => that's what you are asking for
+            gridpane.setVgap(10); //vertical gap in pixels
+            GridPane.setMargin(gridpane, new Insets(50, 50, 50, 50));
 
-
-
-           /* restPane.setAlignContent(FlexboxLayout.AlignContent.CENTER);
-            restPane.setFlexDirection(FlexboxLayout.FlexDirection.ROW);
-            restPane.setFlexWrap(FlexboxLayout.FlexWrap.WRAP);
-            restPane.setAlignItems(FlexboxLayout.AlignItems.FLEX_START);
-            restPane.setJustifyContent(FlexboxLayout.JustifyContent.FLEX_START);
-            } catch (SQLException ex) {
-            ex.printStackTrace();
-        }*/
-           for (int i = 0 ;i <restList.size();i++){
+            for (int i = 0 ;i <restList.size();i++){
                Rest r1 = (Rest) restList.get(i);
                AnchorPane Card1 = RestaurantCard.creat(r1.getNom(),r1.getImages(),r1.getDescription());
                int j=0;

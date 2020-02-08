@@ -30,3 +30,8 @@
    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
        -fx-background-radius: 3px;
 }
+.img{
+           -fx-background-radius: 3px;
+               -fx-border-radius: 3px;
+
+}
