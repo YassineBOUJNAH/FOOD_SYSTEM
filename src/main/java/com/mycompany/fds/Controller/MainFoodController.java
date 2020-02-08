@@ -1,5 +1,6 @@
 package com.mycompany.fds.Controller;
 
+import com.jfoenix.controls.JFXListView;
 import com.mycompany.fds.FoodController;
 import com.mycompany.fds.View.FoodCard;
 import com.mycompany.fds.api.ClientHelper;
@@ -11,6 +12,7 @@ import com.mycompany.fds.model.Prof;
 import com.mycompany.fds.model.Repas;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Orientation;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
@@ -34,6 +36,7 @@ import java.util.ResourceBundle;
 public class MainFoodController implements Initializable {
 
     public AnchorPane paneA;
+    public JFXListView listeRepas;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -47,24 +50,23 @@ public class MainFoodController implements Initializable {
             //Query to show disponible foods
             ResultSet repasDatabase = stmt.executeQuery("select * from repas ");
             ArrayList repasList = RepasHelper.getRepas(repasDatabase);
-            //repasList.forEach((repasItem) -> System.out.println(repasItem));
-            Repas r1= (Repas) repasList.get(0);
-            Repas r2= (Repas) repasList.get(1);
+            repasList.forEach((repasItem) ->
+            {
+                Repas r1 = (Repas) repasItem;
+                try {
+                    AnchorPane Card1 = FoodCard.creat(r1.getNomRepas(), r1.getImg(), r1.getPrix(), r1.getDescription());
+                    listeRepas.getItems().add(Card1);
+                } catch (Exception e) {
+                    e.printStackTrace();
+            }});
 
-            AnchorPane Card1 = FoodCard.creat(r1.getNomRepas() , r1.getImg());
-            //AnchorPane Card2 = FoodCard.creat(r2.getNomRepas(), r2.getImg());
-            System.out.println(r2.getImg());
-            //Card2.setLayoutY(120);
+            listeRepas.setOrientation(Orientation.HORIZONTAL);
+            listeRepas.setFocusTraversable(false);
+            listeRepas.getStylesheets().add("/styles/Styles.css");
+            listeRepas.getStyleClass().add("listeRepas");
 
-           paneA.getChildren().add(Card1);
-            //paneA.getChildren().add(Card2);
+
         } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 

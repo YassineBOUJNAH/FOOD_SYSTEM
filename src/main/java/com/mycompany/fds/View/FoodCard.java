@@ -21,17 +21,18 @@ import static javafx.scene.text.TextAlignment.LEFT;
 
 public class FoodCard {
 
-    public static AnchorPane creat(String titre,String img) throws MalformedURLException, URISyntaxException, FileNotFoundException {
+    public static AnchorPane creat(String titre,String img,double prix,String des) throws MalformedURLException, URISyntaxException, FileNotFoundException {
         AnchorPane anchorPane = new AnchorPane();
         anchorPane.setPrefHeight(110);
         anchorPane.setPrefWidth(140);
-        Image img2 = new Image("images/ensias2.png");
+        Image img2 = new Image(img);
         ImageView image = new ImageView(img2);
 
        // image.setImage(img2);
         image.setFitHeight(110);
-        image.setFitWidth(140);
+        image.setFitWidth(144);
         image.setPickOnBounds(true);
+        image.setLayoutX(2);
 
 
         Label lab = new Label();
@@ -49,7 +50,7 @@ public class FoodCard {
         lab2.setLayoutY(120);
         lab2.setPrefHeight(44);
         lab2.setPrefWidth(140);
-        lab2.setText(titre);
+        lab2.setText(prix+"DH "+des);
         anchorPane.getStylesheets().add("/styles/Styles.css");
 
         anchorPane.getChildren().add(image);
@@ -58,7 +59,7 @@ public class FoodCard {
         anchorPane.getStyleClass().add("h");
 
         anchorPane.setOnMouseClicked((e) -> {
-            System.out.println("hello");
+            System.out.println(titre);
         });
 
         return anchorPane;
