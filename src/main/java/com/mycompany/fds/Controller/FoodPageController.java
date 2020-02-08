@@ -40,6 +40,9 @@ public class FoodPageController implements Initializable {
         bar2.setVisible(false);
         profilePane.setVisible(false);
         panierPane.setVisible(false);
+        profilePane.getStylesheets().add("/styles/Styles.css");
+        panierPane.getStylesheets().add("/styles/Styles.css");
+        homePane.getStylesheets().add("/styles/Styles.css");
 
     }
 

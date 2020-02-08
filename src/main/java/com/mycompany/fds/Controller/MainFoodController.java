@@ -37,6 +37,7 @@ public class MainFoodController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        paneA.getStylesheets().add("/styles/Styles.css");
         try (
                 Connection con = DbConnection.getConnection();
         )
