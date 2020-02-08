@@ -1,28 +1,18 @@
 package com.mycompany.fds.Controller;
 
-import com.dukescript.layouts.flexbox.FlexboxLayout;
 import com.dukescript.layouts.jfxflexbox.FlexBoxPane;
 import com.jfoenix.controls.JFXListView;
-import com.mycompany.fds.FoodController;
 import com.mycompany.fds.View.FoodCard;
 import com.mycompany.fds.View.RestaurantCard;
 import com.mycompany.fds.api.*;
-import com.mycompany.fds.model.Client;
-import com.mycompany.fds.model.Prof;
 import com.mycompany.fds.model.Repas;
 import com.mycompany.fds.model.Rest;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -31,7 +21,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.ResourceBundle;
 
 public class MainFoodController implements Initializable {
@@ -39,6 +28,7 @@ public class MainFoodController implements Initializable {
     public AnchorPane paneA;
     public JFXListView listeRepas;
     public FlexBoxPane restPane;
+    public GridPane gridpane;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -70,28 +60,35 @@ public class MainFoodController implements Initializable {
 //restaurant
             ResultSet restDatabase = stmt.executeQuery("select * from restaurant");
             ArrayList restList = RestHelper.getRest(restDatabase);
-            restPane.setAlignContent(FlexboxLayout.AlignContent.SPACE_AROUND);
+
+
+
+           /* restPane.setAlignContent(FlexboxLayout.AlignContent.CENTER);
             restPane.setFlexDirection(FlexboxLayout.FlexDirection.ROW);
-            restList.forEach((restItem) ->
-            {
-                Rest r2 = (Rest) restItem;
-                try {
-                    AnchorPane Card1 = RestaurantCard.creat(r2.getNom(),r2.getImages(),r2.getDescription());
-                    FlexBoxPane.setGrow(Card1, 1.0f);
-                    FlexBoxPane.setMargin(Card1, new Insets(5));
-                    FlexBoxPane.setFlexBasisPercent(Card1, 10f);
-                    restPane.getChildren().add(Card1);
+            restPane.setFlexWrap(FlexboxLayout.FlexWrap.WRAP);
+            restPane.setAlignItems(FlexboxLayout.AlignItems.FLEX_START);
+            restPane.setJustifyContent(FlexboxLayout.JustifyContent.FLEX_START);
+            } catch (SQLException ex) {
+            ex.printStackTrace();
+        }*/
+           for (int i = 0 ;i <restList.size();i++){
+               Rest r1 = (Rest) restList.get(i);
+               AnchorPane Card1 = RestaurantCard.creat(r1.getNom(),r1.getImages(),r1.getDescription());
+               int j=0;
+               if(i <= 4) {
+                   gridpane.addRow(0, Card1);
+               }
+               else {
+                   gridpane.addRow(1, Card1);
+
+               }
+
+           }
 
 
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }});
-
-
-        } catch (SQLException e) {
+        } catch (SQLException | MalformedURLException | URISyntaxException | FileNotFoundException e) {
             e.printStackTrace();
         }
 
-    }
 
-}
+    }}
