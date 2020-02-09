@@ -64,7 +64,7 @@
       <AnchorPane fx:id="searchBar" layoutY="37" prefHeight="40" prefWidth="901.0" style="-fx-background-color: #cec8c7;">
          <children>
             <TextField layoutX="120" layoutY="5" prefHeight="30" prefWidth="400" />
-            <Button layoutX="700" layoutY="5" text="Search" />
+            <Button layoutX="700" layoutY="5" text="Search" onAction="#run5"/>
             <Button layoutX="800" layoutY="5" onAction="#run3" text="Cancel" />
          </children>
       </AnchorPane>
