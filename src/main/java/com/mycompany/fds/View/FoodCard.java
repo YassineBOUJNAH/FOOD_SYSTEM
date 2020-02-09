@@ -76,8 +76,7 @@ public class FoodCard {
             FXMLLoader loader = new FXMLLoader();
             Parent root;
             try {
-                System.out.println(FXMLLoader.load(MainFoodController.class.getResource("/fxml/commandePage.fxml"))+"");
-                root = loader.load(FoodCard.class.getResource("/fxml/commandePage.fxml"));
+                root = loader.load(FoodCard.class.getResource("/fxml/commandePage.fxml").openStream());
                 System.out.println(root);
                 Scene scene = new Scene(root);
                 CommandePage commandePage = (CommandePage) loader.getController();
