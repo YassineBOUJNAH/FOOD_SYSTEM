@@ -5,10 +5,10 @@ import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
-import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -25,6 +25,9 @@ public class FoodPageController implements Initializable {
     public JFXButton buttonPanier;
     @FXML
     public JFXButton ButtonProfile;
+    public AnchorPane searchBar;
+    public JFXButton search;
+    public AnchorPane searchPane;
     @FXML
     private JFXButton bar2;
     @FXML
@@ -40,9 +43,15 @@ public class FoodPageController implements Initializable {
         bar2.setVisible(false);
         profilePane.setVisible(false);
         panierPane.setVisible(false);
+        searchPane.setVisible(false);
         profilePane.getStylesheets().add("/styles/Styles.css");
         panierPane.getStylesheets().add("/styles/Styles.css");
         homePane.getStylesheets().add("/styles/Styles.css");
+        searchBar.toBack();
+        profilePane.toFront();
+        panierPane.toFront();
+        homePane.toFront();
+        searchBar.setVisible(false);
 
     }
 
@@ -94,5 +103,15 @@ public class FoodPageController implements Initializable {
         profilePane.setVisible(true);
         homePane.setVisible(false);
         panierPane.setVisible(false);
+    }
+
+    public void run4(MouseEvent mouseEvent) {
+        searchBar.setVisible(true);
+        searchBar.toFront();
+    }
+
+    public void run3(ActionEvent actionEvent) {
+        searchBar.setVisible(false);
+        searchBar.toBack();
     }
 }

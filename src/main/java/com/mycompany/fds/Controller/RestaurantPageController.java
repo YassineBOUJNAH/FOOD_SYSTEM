@@ -32,7 +32,6 @@ public class RestaurantPageController implements Initializable {
 
     }
     public void getRest(Rest r){
-        lab.setText(r.getNom());
         Image image = new Image(r.getImages(), 391, 181, false, false);
         restImage.setImage(image);
         restImage.setFitWidth(391);
