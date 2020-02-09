@@ -86,7 +86,7 @@
       </AnchorPane>
       <AnchorPane fx:id="searchPane" layoutY="60.0" prefHeight="665.0" prefWidth="901.0">
          <children>
-            <JFXListView fx:id="listeRepas" layoutX="80.0" layoutY="100.0" prefHeight="475.0" prefWidth="595.0" />
+            <JFXListView fx:id="listeRepas" layoutX="150.0" layoutY="80.0" prefHeight="475.0" prefWidth="595.0" />
          </children>
       </AnchorPane>
    </children>

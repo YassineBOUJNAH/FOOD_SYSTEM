@@ -137,6 +137,7 @@ public class FoodPageController implements Initializable {
     public void run5(ActionEvent actionEvent) {
         listeRepas.getItems().clear();
         searchPane.setVisible(true);
+        searchPane.toFront();
         profilePane.setVisible(false);
         homePane.setVisible(false);
         panierPane.setVisible(false);
