@@ -1,20 +1,31 @@
 package com.mycompany.fds.View;
 
+import com.jfoenix.utils.JFXUtilities;
+import com.mycompany.fds.Controller.CommandePage;
+import com.mycompany.fds.Controller.FoodPageController;
+import com.mycompany.fds.Controller.MainFoodController;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.ImageViewBuilder;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Objects;
 
+import static com.sun.javafx.scene.control.skin.Utils.getResource;
 import static javafx.scene.text.TextAlignment.CENTER;
 import static javafx.scene.text.TextAlignment.LEFT;
 
@@ -60,6 +71,18 @@ public class FoodCard {
 
         anchorPane.setOnMouseClicked((e) -> {
             System.out.println(titre);
+            Stage primaryStage = new Stage();
+            FXMLLoader loader = new FXMLLoader();
+            try {
+                Scene scene = new Scene((FXMLLoader.load(Objects.requireNonNull(FoodCard.class.getClassLoader().getResource("/fxml/commandePage.fxml")))));
+                CommandePage commandePage = (CommandePage) loader.getController();
+                commandePage.getFood(titre);
+                primaryStage.setScene(scene);
+                primaryStage.show();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+
         });
 
         return anchorPane;
