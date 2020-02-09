@@ -6,6 +6,7 @@ import com.mycompany.fds.Controller.FoodPageController;
 import com.mycompany.fds.Controller.MainFoodController;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -73,13 +74,17 @@ public class FoodCard {
             System.out.println(titre);
             Stage primaryStage = new Stage();
             FXMLLoader loader = new FXMLLoader();
+            Parent root;
             try {
-                Scene scene = new Scene((FXMLLoader.load(Objects.requireNonNull(FoodCard.class.getClassLoader().getResource("/fxml/commandePage.fxml")))));
+                System.out.println(FXMLLoader.load(MainFoodController.class.getResource("/fxml/commandePage.fxml"))+"");
+                root = loader.load(FoodCard.class.getResource("/fxml/commandePage.fxml"));
+                System.out.println(root);
+                Scene scene = new Scene(root);
                 CommandePage commandePage = (CommandePage) loader.getController();
                 commandePage.getFood(titre);
                 primaryStage.setScene(scene);
                 primaryStage.show();
-            } catch (IOException ex) {
+            } catch (Exception ex) {
                 ex.printStackTrace();
             }
 
