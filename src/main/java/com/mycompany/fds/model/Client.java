@@ -12,6 +12,7 @@ public class Client {
     private String name;
     private String email;
     private String password;
+    private String photo;
 
 
     public Client(int id, String username, String name, String email, String password) {
@@ -20,6 +21,7 @@ public class Client {
         this.name = name;
         this.email = email;
         this.password = password;
+
     }
 
     public int getId() {
@@ -62,7 +64,11 @@ public class Client {
         this.password = password;
     }
 
+    public String getPhoto() {
+        return photo;
+    }
 
-    
-    
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
 }

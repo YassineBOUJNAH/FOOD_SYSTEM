@@ -1,11 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane layoutX="20" prefWidth="50" prefHeight="50"  style="-fx-background-color: #00FF00;" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.fds.Controller.ProfileFoodController">
 
+<AnchorPane layoutX="20" prefHeight="500.0" prefWidth="700.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.fds.Controller.ProfileFoodController">
+   <children>
+      <Label fx:id="username" layoutX="375.0" layoutY="117.0" text="Username">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Text layoutX="243.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue">
+         <font>
+            <Font name="Segoe UI" size="18.0" />
+         </font>
+      </Text>
+      <Label fx:id="password" layoutX="375.0" layoutY="333.0" text="123456" />
+      <Text layoutX="259.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Votre id">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="259.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="259.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="260.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="260.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font>
+      </Text>
+      <Label fx:id="email" layoutX="375.0" layoutY="301.0" text="email@.com" />
+      <Label fx:id="prenom" layoutX="374.0" layoutY="269.0" text="Nafil" />
+      <Label fx:id="nom" layoutX="374.0" layoutY="242.0" text="Rachad" />
+      <Label fx:id="id" layoutX="375.0" layoutY="212.0" text="011" />
+      <ImageView fx:id="photo" fitHeight="150.0" fitWidth="200.0" layoutX="477.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
 </AnchorPane>

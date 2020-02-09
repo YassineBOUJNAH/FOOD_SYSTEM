@@ -20,6 +20,8 @@ import com.jfoenix.controls.JFXTextField;
 import com.mycompany.fds.api.ClientHelper;
 import com.mycompany.fds.api.DbConnection;
 import com.mycompany.fds.model.Client;
+import com.mycompany.fds.model.CurrentUser;
+import com.mycompany.fds.model.Prof;
 import javafx.animation.Animation;
 import javafx.animation.Timeline;
 import javafx.animation.Transition;
@@ -80,6 +82,7 @@ public class LoginController implements Initializable {
     PreparedStatement preparedStatement = null;
     ResultSet resultSet = null;
 
+    Client clientActuel = null;
     @FXML
     public void handleButtonAction(MouseEvent event) {
 
@@ -96,7 +99,7 @@ public class LoginController implements Initializable {
                     stage.close();
                     //Open the application home Onboard.fxml
                     //Scene scene = new Scene((FXMLLoader.load(getClass().getResource("/fxml/OnBoard.fxml"))));
-                   Scene scene = new Scene((FXMLLoader.load(getClass().getResource("/fxml/FoodPage.fxml"))));
+                    Scene scene = new Scene((FXMLLoader.load(getClass().getResource("/fxml/FoodPage.fxml"))));
                     scene.getStylesheets().add("/styles/Styles.css");
                     System.out.println(scene+"this is the OnBoard scene");
                     stage.setScene(scene);
@@ -148,6 +151,25 @@ public class LoginController implements Initializable {
                     status = "Error";
                 } else {
                     setLblError(Color.GREEN, "Login Successful..Redirecting..");
+                    //clientActuel = new Client(resultSet.getInt("id_client"), resultSet.getString("username"), resultSet.getString("nom_client"), resultSet.getString("email"), resultSet.getString("password"));
+                    //clientActuel.setPhoto(resultSet.getString("photo"));
+                    CurrentUser.id = resultSet.getInt("id_client");
+                    CurrentUser.name = resultSet.getString("nom_client");
+                    CurrentUser.username = resultSet.getString("username");
+                    CurrentUser.email = resultSet.getString("email");
+                    CurrentUser.password = resultSet.getString("password");
+                    CurrentUser.photo = resultSet.getString("photo");
+                    /**Here we will pass the user information
+                     * * to the profile page "ProfileFoodController.java"
+                     */
+                    /*
+                    Stage primaryStage = new Stage();
+                    FXMLLoader loader = new FXMLLoader();
+                    Pane root = loader.load(getClass().getResource("/ProfileFoodController"));
+
+                     */
+
+
                 }
             } catch (SQLException ex) {
                 System.err.println(ex.getMessage());
