@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
+<?import com.jfoenix.controls.JFXListView?>
 <AnchorPane maxWidth="50" minHeight="800.0" minWidth="900.0" prefHeight="800.0" prefWidth="50.0" style="-fx-background-color: #FFF;" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.fds.Controller.FoodPageController">
    <children>
       <BorderPane prefHeight="900.0" prefWidth="900.0">
@@ -63,7 +64,7 @@
       </BorderPane>
       <AnchorPane fx:id="searchBar" layoutY="37" prefHeight="40" prefWidth="901.0" style="-fx-background-color: #cec8c7;">
          <children>
-            <TextField layoutX="120" layoutY="5" prefHeight="30" prefWidth="400" />
+            <TextField fx:id="searchfiled" layoutX="120" layoutY="5" prefHeight="30" prefWidth="400" />
             <Button layoutX="700" layoutY="5" text="Search" onAction="#run5"/>
             <Button layoutX="800" layoutY="5" onAction="#run3" text="Cancel" />
          </children>
@@ -85,7 +86,7 @@
       </AnchorPane>
       <AnchorPane fx:id="searchPane" layoutY="60.0" prefHeight="665.0" prefWidth="901.0">
          <children>
-            <fx:include source="searchFood.fxml" />
+            <JFXListView fx:id="listeRepas" layoutX="80.0" layoutY="100.0" prefHeight="475.0" prefWidth="595.0" />
          </children>
       </AnchorPane>
    </children>

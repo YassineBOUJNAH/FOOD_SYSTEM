@@ -1,15 +1,26 @@
 package com.mycompany.fds.Controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
+import com.mycompany.fds.View.FoodCard2;
+import com.mycompany.fds.api.DbConnection;
+import com.mycompany.fds.api.RepasHelper;
+import com.mycompany.fds.model.Repas;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class FoodPageController implements Initializable {
@@ -28,6 +39,8 @@ public class FoodPageController implements Initializable {
     public AnchorPane searchBar;
     public JFXButton search;
     public AnchorPane searchPane;
+    public TextField searchfiled;
+    public JFXListView listeRepas;
     @FXML
     private JFXButton bar2;
     @FXML
@@ -122,9 +135,38 @@ public class FoodPageController implements Initializable {
     }
 
     public void run5(ActionEvent actionEvent) {
+        listeRepas.getItems().clear();
         searchPane.setVisible(true);
         profilePane.setVisible(false);
         homePane.setVisible(false);
         panierPane.setVisible(false);
+        String recherche = searchfiled.getText();
+
+
+        try (
+                Connection con = DbConnection.getConnection();
+        )
+        {
+            Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+
+            //Query to show disponible foods
+            ResultSet repasDatabase = stmt.executeQuery("select * from repas where nom_repas REGEXP '(^"+ recherche+")'");
+            ArrayList repasList = RepasHelper.getRepas(repasDatabase);
+            repasList.forEach((repasItem) ->
+            {
+                Repas r1 = (Repas) repasItem;
+                try {
+                    AnchorPane Card1 = FoodCard2.creat(r1);
+                    listeRepas.getItems().add(Card1);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }});
+
+            listeRepas.setFocusTraversable(false);
+            listeRepas.getStylesheets().add("/styles/Styles.css");
+            listeRepas.getStyleClass().add("listeRepas");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
