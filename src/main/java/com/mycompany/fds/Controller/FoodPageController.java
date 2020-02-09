@@ -104,18 +104,24 @@ public class FoodPageController implements Initializable {
         profilePane.setVisible(false);
         homePane.setVisible(false);
         panierPane.setVisible(true);
+        searchPane.setVisible(false);
+
     }
 
     public void onHomeAction(ActionEvent actionEvent) {
         profilePane.setVisible(false);
         homePane.setVisible(true);
         panierPane.setVisible(false);
+        searchPane.setVisible(false);
+
     }
 
     public void OnProfileAction(ActionEvent actionEvent) {
         profilePane.setVisible(true);
         homePane.setVisible(false);
         panierPane.setVisible(false);
+        searchPane.setVisible(false);
+
     }
 
     public void run4(MouseEvent mouseEvent) {
