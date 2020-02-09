@@ -28,7 +28,6 @@ public class MainFoodController implements Initializable {
 
     public AnchorPane paneA;
     public JFXListView listeRepas;
-    public FlexBoxPane restPane;
     public GridPane gridpane;
 
     @Override

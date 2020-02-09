@@ -45,7 +45,7 @@ public class FoodCard {
         image.setFitHeight(110);
         image.setFitWidth(144);
         image.setPickOnBounds(true);
-        image.setLayoutX(2);
+        image.setLayoutX(0);
 
 
         Label lab = new Label();
