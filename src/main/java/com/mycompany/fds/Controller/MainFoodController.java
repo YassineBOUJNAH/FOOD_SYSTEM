@@ -67,7 +67,7 @@ public class MainFoodController implements Initializable {
 
             for (int i = 0 ;i <restList.size();i++){
                Rest r1 = (Rest) restList.get(i);
-               AnchorPane Card1 = RestaurantCard.creat(r1.getNom(),r1.getImages(),r1.getDescription());
+               AnchorPane Card1 = RestaurantCard.creat(r1);
                int j=0;
                if(i <= 4) {
                    gridpane.addRow(0, Card1);
