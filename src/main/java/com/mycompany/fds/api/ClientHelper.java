@@ -36,7 +36,7 @@ public class ClientHelper {
             stmt.setString(3,c.getPassword());
             stmt.setString(4,c.getEmail());
             stmt.setString(5, "images/ensias.png");
-
+//
             stmt.execute();
         }
         catch(Exception e){
