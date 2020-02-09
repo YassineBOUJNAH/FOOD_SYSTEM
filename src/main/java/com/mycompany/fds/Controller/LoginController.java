@@ -159,17 +159,6 @@ public class LoginController implements Initializable {
                     CurrentUser.email = resultSet.getString("email");
                     CurrentUser.password = resultSet.getString("password");
                     CurrentUser.photo = resultSet.getString("photo");
-                    /**Here we will pass the user information
-                     * * to the profile page "ProfileFoodController.java"
-                     */
-                    /*
-                    Stage primaryStage = new Stage();
-                    FXMLLoader loader = new FXMLLoader();
-                    Pane root = loader.load(getClass().getResource("/ProfileFoodController"));
-
-                     */
-
-
                 }
             } catch (SQLException ex) {
                 System.err.println(ex.getMessage());

@@ -27,7 +27,7 @@ public class ClientHelper {
     }
     public static void addClient(Client c){
         String sql= " insert into client"
-                + " values (NULL, ?, ?, ?, ?)";
+                + " values (NULL, ?, ?, ?, ?, ?)";
         try (Connection conn= DbConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql);
         ){
@@ -35,6 +35,7 @@ public class ClientHelper {
             stmt.setString(2,c.getUsername());
             stmt.setString(3,c.getPassword());
             stmt.setString(4,c.getEmail());
+            stmt.setString(5, "images/ensias.png");
 
             stmt.execute();
         }
