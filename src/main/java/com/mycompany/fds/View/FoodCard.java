@@ -4,6 +4,7 @@ import com.jfoenix.utils.JFXUtilities;
 import com.mycompany.fds.Controller.CommandePage;
 import com.mycompany.fds.Controller.FoodPageController;
 import com.mycompany.fds.Controller.MainFoodController;
+import com.mycompany.fds.model.Repas;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
@@ -33,11 +34,11 @@ import static javafx.scene.text.TextAlignment.LEFT;
 
 public class FoodCard {
 
-    public static AnchorPane creat(String titre,String img,double prix,String des) throws MalformedURLException, URISyntaxException, FileNotFoundException {
+    public static AnchorPane creat(Repas r1) throws MalformedURLException, URISyntaxException, FileNotFoundException {
         AnchorPane anchorPane = new AnchorPane();
         anchorPane.setPrefHeight(110);
         anchorPane.setPrefWidth(140);
-        Image img2 = new Image(img);
+        Image img2 = new Image(r1.getImg());
         ImageView image = new ImageView(img2);
 
        // image.setImage(img2);
@@ -52,7 +53,7 @@ public class FoodCard {
         lab.setLayoutY(100);
         lab.setPrefHeight(44);
         lab.setPrefWidth(140);
-        lab.setText(" "+titre);
+        lab.setText(" "+r1.getNomRepas());
         lab.setStyle("-fx-font-weight: bold;" );
         lab.setTextAlignment( CENTER );
         lab.setAlignment(Pos.CENTER);
@@ -62,16 +63,17 @@ public class FoodCard {
         lab2.setLayoutY(120);
         lab2.setPrefHeight(44);
         lab2.setPrefWidth(140);
-        lab2.setText(prix+"DH "+des);
+        lab2.setText(r1.getPrix()+"DH "+r1.getDescription());
         anchorPane.getStylesheets().add("/styles/Styles.css");
 
         anchorPane.getChildren().add(image);
         anchorPane.getChildren().add(lab);
         anchorPane.getChildren().add(lab2);
         anchorPane.getStyleClass().add("h");
+//(String nomRepas, float prix, String restaurant, int rank, String description, String img){
 
         anchorPane.setOnMouseClicked((e) -> {
-            System.out.println(titre);
+            System.out.println(r1.getNomRepas());
             Stage primaryStage = new Stage();
             FXMLLoader loader = new FXMLLoader();
             Parent root;
@@ -80,7 +82,7 @@ public class FoodCard {
                 System.out.println(root);
                 Scene scene = new Scene(root);
                 CommandePage commandePage = (CommandePage) loader.getController();
-                commandePage.getFood(titre);
+                commandePage.getFood(r1);
                 primaryStage.setScene(scene);
                 primaryStage.show();
             } catch (Exception ex) {

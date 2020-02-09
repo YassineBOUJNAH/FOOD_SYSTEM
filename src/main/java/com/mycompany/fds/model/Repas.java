@@ -18,6 +18,15 @@ public class Repas {
         this.description = description;
         this.img = img;
     }
+    public Repas(String nomRepas, float prix, String restaurant, int rank, String description, String img){
+        this.nomRepas = nomRepas;
+        this.prix = prix;
+        this.restaurant = restaurant;
+        this.rank = rank;
+        this.description = description;
+        this.img = img;
+
+    }
     
     public int getIdRepas() {
         return idRepas;

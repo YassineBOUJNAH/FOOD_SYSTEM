@@ -47,7 +47,7 @@ public class MainFoodController implements Initializable {
             {
                 Repas r1 = (Repas) repasItem;
                 try {
-                    AnchorPane Card1 = FoodCard.creat(r1.getNomRepas(), r1.getImg(), r1.getPrix(), r1.getDescription());
+                    AnchorPane Card1 = FoodCard.creat(r1);
                     listeRepas.getItems().add(Card1);
                 } catch (Exception e) {
                     e.printStackTrace();

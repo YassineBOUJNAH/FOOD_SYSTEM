@@ -1,5 +1,6 @@
 package com.mycompany.fds.Controller;
 
+import com.mycompany.fds.model.Repas;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
@@ -13,7 +14,7 @@ public class CommandePage implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
-    public void getFood(String titre){
-        lab.setText(titre);
+    public void getFood(Repas r1){
+        lab.setText(r1.getNomRepas());
     }
 }
