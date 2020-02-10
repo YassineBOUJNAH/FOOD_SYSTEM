@@ -36,7 +36,6 @@ public class CommandePage implements Initializable {
     }
     public void getFood(Repas r1){
 
-
         nomRepas.setText(r1.getNomRepas());
         description.setText(r1.getDescription());
         quantite.setText(String.valueOf(r1.getRank()));
