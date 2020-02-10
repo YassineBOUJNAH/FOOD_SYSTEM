@@ -69,7 +69,7 @@ public class CommandePage implements Initializable {
         CurrentPanier.resultatCommande.put(idRepasActuel, CurrentPanier.listeRepasCommande);
         LinkedList<String> afficherRecu = CurrentPanier.resultatCommande.get(idRepasActuel);
         System.out.println("Resultat de votre commande: "+afficherRecu);
-        //System.out.println("id repas actuel : "+idRepasActuel+" avec quantité: "+qteRepasActuel);
+        System.out.println("Vous avez commandé: "+qteRepasActuel+" "+nomRepasActuel);
     }
 
     public void calculerPrix(ActionEvent actionEvent){
