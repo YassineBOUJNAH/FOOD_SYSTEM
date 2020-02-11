@@ -35,6 +35,6 @@
                -fx-border-radius: 3px;
 }
 
-.imageRepas{
-            -fx-border-radius: 5;
+.imageOval{
+            -fx-border-radius: 50%;
 }
