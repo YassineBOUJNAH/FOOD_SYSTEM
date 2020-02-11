@@ -31,10 +31,18 @@
        -fx-background-radius: 3px;
 }
 .img{
-           -fx-background-radius: 3px;
-               -fx-border-radius: 3px;
+       -fx-background-radius: 3px;
+       -fx-border-radius: 3px;
 }
 
 .imageOval{
-            -fx-border-radius: 50%;
+            -fx-border-radius: 50px;
+}
+
+.btn{
+    -fx-background-color: green;
+}
+
+.btnError{
+   -fx-background-color: red;
 }
