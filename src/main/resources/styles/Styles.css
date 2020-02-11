@@ -33,5 +33,8 @@
 .img{
            -fx-background-radius: 3px;
                -fx-border-radius: 3px;
+}
 
+.imageOval{
+            -fx-border-radius: 50%;
 }
