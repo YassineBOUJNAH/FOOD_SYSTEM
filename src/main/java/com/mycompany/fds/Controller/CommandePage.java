@@ -11,6 +11,7 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.LinkedList;
@@ -70,6 +71,8 @@ public class CommandePage implements Initializable {
         LinkedList<String> afficherRecu = CurrentPanier.resultatCommande.get(idRepasActuel);
         System.out.println("Resultat de votre commande: "+afficherRecu);
         System.out.println("Vous avez commandé: "+qteRepasActuel+" "+nomRepasActuel);
+        Stage stage = (Stage) valider.getScene().getWindow();
+        stage.close();
     }
 
     public void calculerPrix(ActionEvent actionEvent){
@@ -79,6 +82,11 @@ public class CommandePage implements Initializable {
         totalPrix = Float.parseFloat(total.getText()) * prixRepasActuel;
         System.out.println("Prix total: "+totalPrix);
         total.setText(String.valueOf(totalPrix));
+    }
+
+    public void closeWindow(ActionEvent actionEvent){
+        Stage stage = (Stage) annuler.getScene().getWindow();
+        stage.close();
     }
 
     /*
