@@ -12,3 +12,4 @@
       <ImageView fx:id="restImage" fitHeight="181.0" fitWidth="391.0" layoutX="106.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
+<!--    -->
