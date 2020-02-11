@@ -46,3 +46,8 @@
 .btnError{
    -fx-background-color: red;
 }
+
+.updateForm{
+    -fx-background-color: white;
+    -fx-border-radius: 50px;
+}

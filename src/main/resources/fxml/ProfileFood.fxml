@@ -15,8 +15,8 @@
    <children>
       <Pane layoutX="-20.0" prefHeight="500.0" prefWidth="921.0" style="-fx-background-color: #f7f7f7;">
          <children>
-            <JFXButton fx:id="update" layoutX="93.0" layoutY="240.0" styleClass="btn" text="Update" textFill="WHITE" />
-            <JFXButton fx:id="delete" layoutX="104.0" layoutY="354.0" styleClass="btnError" text="Delete" textFill="WHITE" />
+            <JFXButton fx:id="update" layoutX="284.0" layoutY="384.0" styleClass="btn" text="Update" textFill="WHITE" />
+            <JFXButton fx:id="delete" layoutX="208.0" layoutY="383.0" styleClass="btnError" text="Delete" textFill="WHITE" />
             <Label fx:id="password" layoutX="301.0" layoutY="347.0" text="123456" />
             <Text layoutX="185.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Votre id">
                <font>
@@ -47,10 +47,16 @@
             <Label fx:id="prenom" layoutX="300.0" layoutY="283.0" text="Nafil" />
             <Label fx:id="nom" layoutX="300.0" layoutY="256.0" text="Rachad" />
             <Label fx:id="id" layoutX="301.0" layoutY="226.0" text="011" />
-            <JFXTextField id="inputProfile" fx:id="updateNom" layoutX="674.0" layoutY="230.0" promptText="Votre nom" />
-            <JFXTextField id="inputProfile" fx:id="updatePrenom" layoutX="675.0" layoutY="271.0" promptText="Votre prénom" />
-            <JFXTextField id="inputProfile" fx:id="updateEmail" layoutX="676.0" layoutY="350.0" promptText="Votre email" />
-            <JFXPasswordField fx:id="updatePassword" layoutX="676.0" layoutY="312.0" promptText="votre pass" text="password" />
+            <Text layoutX="653.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier votre informations">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <JFXPasswordField fx:id="updatePassword" focusColor="#2980b9" layoutX="656.0" layoutY="345.0" promptText="votre pass" text="password" />
+            <JFXTextField id="inputProfile" fx:id="updateEmail" focusColor="#2980b9" layoutX="657.0" layoutY="311.0" promptText="Votre email" />
+            <JFXTextField id="inputProfile" fx:id="updatePrenom" focusColor="#2980b9" layoutX="658.0" layoutY="273.0" promptText="Votre prénom" />
+            <JFXTextField id="inputProfile" fx:id="updateNom" focusColor="#2980b9" layoutX="661.0" layoutY="234.0" promptText="Votre nom" />
+            <JFXButton fx:id="update1" layoutX="694.0" layoutY="385.0" styleClass="btn" text="Valider" textFill="WHITE" />
          </children>
       </Pane>
       <Pane layoutX="-20.0" prefHeight="160.0" prefWidth="920.0" style="-fx-background-color: #dfe3ee;">
