@@ -2,15 +2,13 @@ package com.mycompany.fds.model;
 
 public class Commande {
     
-    private Integer id;
-    private String etat;
+    private String id;
     private  String address;
     private String date;
-    private  Integer prix;
+    private  String prix;
     private int client;
 
-
-    public Commande(Integer id, String address, String date, Integer prix, int client) {
+    public Commande(String id, String address, String date, String prix, int client) {
         this.id = id;
         this.address = address;
         this.date = date;
@@ -18,7 +16,13 @@ public class Commande {
         this.client = client;
     }
 
-    public void setId(Integer id) {
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -38,11 +42,11 @@ public class Commande {
         this.date = date;
     }
 
-    public Integer getPrix() {
+    public String getPrix() {
         return prix;
     }
 
-    public void setPrix(Integer prix) {
+    public void setPrix(String prix) {
         this.prix = prix;
     }
 
@@ -53,19 +57,4 @@ public class Commande {
     public void setClient(int client) {
         this.client = client;
     }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public String getEtat() {
-        return etat;
-    }
-
-    public void setEtat(String etat) {
-        this.etat = etat;
-    }
-    
-    
-    
 }

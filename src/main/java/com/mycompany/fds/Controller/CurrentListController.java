@@ -78,8 +78,6 @@ public class CurrentListController implements Initializable {
             });
             table_data.add(new Ligne(n,q,p,pt,btn));
 
-            System.out.println(n+"  "+q+"  "+p+"  "+pt);
-
         }
         table_info.setItems(table_data);
     }

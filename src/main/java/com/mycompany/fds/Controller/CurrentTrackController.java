@@ -104,7 +104,7 @@ public class CurrentTrackController implements Initializable {
                         scheduledExecutorService.shutdown();
                         //message whatsup
                     }else {
-                        mapView.getEngine().load(st2);
+                        mapView.getEngine().load("https://www.google.com/maps/dir/"+st2);
                         System.out.println(st);
                         Date now = new Date();
                         // put random number with current time
