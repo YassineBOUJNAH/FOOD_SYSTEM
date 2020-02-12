@@ -102,6 +102,7 @@ public class CurrentTrackController implements Initializable {
                     st2= finalBr2.readLine();
                     if (st == null) {
                         scheduledExecutorService.shutdown();
+                        //message whatsup
                     }else {
                         mapView.getEngine().load(st2);
                         System.out.println(st);
