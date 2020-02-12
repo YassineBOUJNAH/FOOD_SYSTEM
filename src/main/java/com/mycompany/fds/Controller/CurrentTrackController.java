@@ -52,7 +52,7 @@ public class CurrentTrackController implements Initializable {
         pan2.toFront();
 
 
-////////////////////////////////
+/////////////////////////////////
 
 
       //  webView.getEngine().load("https://www.google.com/maps/dir/33.5572788,-7.6113999/33.5588165,-7.611781/@33.5543461,-7.607704,16z/data=!4m2!4m1!3e3");
