@@ -17,6 +17,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebView;
 
@@ -38,6 +39,7 @@ public class CurrentTrackController implements Initializable {
     static  String st2="";
     public AnchorPane pane;
     public WebView mapView;
+    public Pane pan2;
     GoogleMap map;
 
     @Override
@@ -47,6 +49,7 @@ public class CurrentTrackController implements Initializable {
         BufferedReader br = null;
         BufferedReader br2 = null;
         mapView.toBack();
+        pan2.toFront();
 
 
 ////////////////////////////////

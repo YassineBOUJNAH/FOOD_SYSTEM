@@ -8,5 +8,6 @@
    <AnchorPane fx:id="pane" layoutX="600" prefHeight="200.0" prefWidth="200.0">
    </AnchorPane>
    <WebView fx:id="mapView" layoutX="-426.0" prefHeight="498.0" prefWidth="823.0" BorderPane.alignment="CENTER" />
+   <Pane fx:id="pan2" layoutX="-426.0" prefHeight="498.0" prefWidth="823.0"/>
 </children>
 </AnchorPane>
