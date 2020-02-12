@@ -46,6 +46,7 @@ public class CurrentTrackController implements Initializable {
         File file2 = new File("src/main/resources/iotFiles/metreSensor");
         BufferedReader br = null;
         BufferedReader br2 = null;
+        mapView.toBack();
 
 
 ////////////////////////////////

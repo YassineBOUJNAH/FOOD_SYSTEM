@@ -5,8 +5,8 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.fds.Controller.CurrentTrackController">
 <children>
-   <AnchorPane fx:id="pane" prefHeight="200.0" prefWidth="200.0">
+   <AnchorPane fx:id="pane" layoutX="600" prefHeight="200.0" prefWidth="200.0">
    </AnchorPane>
-   <WebView fx:id="mapView" layoutX="477.0" prefHeight="700.0" prefWidth="823.0" BorderPane.alignment="CENTER" />
+   <WebView fx:id="mapView" layoutX="-426.0" prefHeight="498.0" prefWidth="823.0" BorderPane.alignment="CENTER" />
 </children>
 </AnchorPane>
