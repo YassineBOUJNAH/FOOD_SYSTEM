@@ -35,6 +35,7 @@ public class CommandePage implements Initializable {
     @FXML private JFXButton annuler;
     @FXML private ImageView photo;
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         int quantiteMax = Integer.parseInt(quantite.getText());
@@ -58,19 +59,24 @@ public class CommandePage implements Initializable {
 
 
     public void validerCommande(ActionEvent actionEvent){
+
+
+
+//(String nomRepas, float prix, String restaurant, int rank, String description, String img){
+
+
+
+
         System.out.println("Votre commande est enregistré !");
         int idRepasActuel = Integer.parseInt(idRepas.getText());
         int qteRepasActuel = Integer.parseInt(this.spinner.getValue().toString()); //quantité hya rank f database
         String nomRepasActuel = nomRepas.getText();
-        // Now we store the id and quantity in our HashMap (CurrentPanier.java)
-        //CurrentPanier.ligneCommande.put(idRepasActuel, qteRepasActuel);
-        //CurrentPanier.listeRepasCommande.add(String.valueOf(idRepasActuel)); //Ajouter l'id de repas à la liste
-        CurrentPanier.listeRepasCommande.add(nomRepasActuel);
-        CurrentPanier.listeRepasCommande.add(String.valueOf(qteRepasActuel));
-        CurrentPanier.resultatCommande.put(idRepasActuel, CurrentPanier.listeRepasCommande);
-        LinkedList<String> afficherRecu = CurrentPanier.resultatCommande.get(idRepasActuel);
-        System.out.println("Resultat de votre commande: "+afficherRecu);
-        System.out.println("Vous avez commandé: "+qteRepasActuel+" "+nomRepasActuel);
+        float prixRepas = Float.parseFloat(prix.getText());
+
+        Repas r = new Repas(nomRepasActuel,prixRepas,null,9,null,null);
+        CurrentPanier.listeRepas.add(r);
+        CurrentPanier.liggneCom.put(nomRepasActuel,qteRepasActuel);
+        System.out.println("nom repa" + CurrentPanier.listeRepas.getLast().getNomRepas() + "quantite  " + CurrentPanier.liggneCom.get(CurrentPanier.listeRepas.getLast().getNomRepas()));
         Stage stage = (Stage) valider.getScene().getWindow();
         stage.close();
     }

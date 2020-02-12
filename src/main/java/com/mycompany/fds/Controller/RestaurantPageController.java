@@ -26,10 +26,11 @@ public class RestaurantPageController implements Initializable {
     public Label lab;
     public JFXListView listeRepas;
     public ImageView restImage;
+    public AnchorPane RestaurantPagePane;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        RestaurantPagePane.getStylesheets();
     }
     public void getRest(Rest r){
         Image image = new Image(r.getImages(), 391, 181, false, false);

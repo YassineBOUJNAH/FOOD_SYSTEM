@@ -32,7 +32,6 @@ public class PanierFoodController implements Initializable {
     public JFXButton afficherButton;
     public JFXButton confirmerButton;
     public JFXButton trackerButton;
-    public TableView tablePanier2;
 
     Connection con = null;
     PreparedStatement preparedStatement = null;
@@ -42,26 +41,7 @@ public class PanierFoodController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         trackerButton.setVisible(false);
-        TableColumn id_col = new TableColumn("Id");
-        TableColumn address_col = new TableColumn("Address");
-        TableColumn Total_col = new TableColumn("Total Prix");
-        TableColumn time = new TableColumn("Date");
 
-        id_col.setCellValueFactory(
-                new PropertyValueFactory<Commande, Integer>("id")
-        );
-        address_col.setCellValueFactory(
-                new PropertyValueFactory<Commande, String>("address")
-        );
-        time.setCellValueFactory(
-                new PropertyValueFactory<Commande, String>("date")
-        );
-        Total_col.setCellValueFactory(
-                new PropertyValueFactory<Commande, Integer>("prix")
-        );
-
-
-        tablePanier2.getColumns().addAll(id_col, address_col, Total_col, time);
 
         String sql = "SELECT * FROM Commande Where client = ? ";
         ObservableList<Commande> data = FXCollections.observableArrayList();

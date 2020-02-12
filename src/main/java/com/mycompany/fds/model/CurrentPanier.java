@@ -11,4 +11,6 @@ public class CurrentPanier {
     //public static HashMap<Integer, Integer> ligneCommande = new HashMap<Integer, Integer>();
     public static HashMap<Integer, LinkedList<String>> resultatCommande = new HashMap<Integer, LinkedList<String>>();
 
+    public static  LinkedList<Repas> listeRepas = new LinkedList<Repas>();
+    public static HashMap<String,Integer> liggneCom = new HashMap<String, Integer>();
 }
