@@ -39,7 +39,7 @@ public class CurrentTrackController implements Initializable {
     static  String st2="";
     public AnchorPane pane;
     public WebView mapView;
-    public Pane pan2;
+  //  public Pane pan2;
     GoogleMap map;
 
     @Override
@@ -49,7 +49,7 @@ public class CurrentTrackController implements Initializable {
         BufferedReader br = null;
         BufferedReader br2 = null;
         mapView.toBack();
-        pan2.toFront();
+      //  pan2.toFront();
 
 
 /////////////////////////////////
