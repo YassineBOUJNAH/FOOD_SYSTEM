@@ -1,7 +1,10 @@
 package com.mycompany.fds.Controller;
 
-//import com.mycompany.fds.Helper;
+import com.lynden.gmapsfx.GoogleMapView;
+import com.lynden.gmapsfx.javascript.object.*;
+import com.mycompany.fds.Helper;
 import com.mycompany.fds.View.FoodCard;
+
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -14,6 +17,8 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.web.WebView;
 
 import java.io.*;
 import java.net.URL;
@@ -30,15 +35,30 @@ public class CurrentTrackController implements Initializable {
     public Label chaleurLabel;
     public Label metreLabel;
     static String st ="";
+    static  String st2="";
     public AnchorPane pane;
+    public WebView mapView;
+    GoogleMap map;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)  {
         File file = new File("src/main/resources/iotFiles/chaleurSensor");
+        File file2 = new File("src/main/resources/iotFiles/metreSensor");
         BufferedReader br = null;
+        BufferedReader br2 = null;
+
+
+////////////////////////////////
+
+
+      //  webView.getEngine().load("https://www.google.com/maps/dir/33.5572788,-7.6113999/33.5588165,-7.611781/@33.5543461,-7.607704,16z/data=!4m2!4m1!3e3");
+
+
+////////////////////////////
         try {
 
             br = new BufferedReader(new FileReader(file));
+            br2 = new BufferedReader(new FileReader(file2));
 //defining the axes
             final CategoryAxis xAxis = new CategoryAxis(); // we are gonna plot against time
             final NumberAxis yAxis = new NumberAxis();
@@ -54,7 +74,8 @@ public class CurrentTrackController implements Initializable {
             //defining a series to display data
             XYChart.Series<String, Number> series = new XYChart.Series<>();
             series.setName("Temperature en Celcius");
-
+            lineChart.setPrefWidth(300);
+            lineChart.setPrefHeight(200);
             // add series to chart
             lineChart.getData().add(series);
             pane.getChildren().add(lineChart);
@@ -66,6 +87,7 @@ public class CurrentTrackController implements Initializable {
 
 
             BufferedReader finalBr = br;
+            BufferedReader finalBr2 = br2;
             scheduledExecutorService.scheduleAtFixedRate(() -> {
             // get a random integer between 0-10
 
@@ -73,10 +95,11 @@ public class CurrentTrackController implements Initializable {
             Platform.runLater(() -> {
                 try {
                     st = finalBr.readLine();
+                    st2= finalBr2.readLine();
                     if (st == null) {
                         scheduledExecutorService.shutdown();
                     }else {
-                        chaleurLabel.setText(st);
+                        mapView.getEngine().load(st2);
                         System.out.println(st);
                         Date now = new Date();
                         // put random number with current time
@@ -86,12 +109,8 @@ public class CurrentTrackController implements Initializable {
                     e.printStackTrace();
                 }
             });
-        }, 0, 1, TimeUnit.SECONDS);
+        }, 0, 8, TimeUnit.SECONDS);
 
-           /* while ((st = br.readLine()) != null) {
-                System.out.println(st);
-            }
-*/
 
         } catch (Exception e) {
             e.printStackTrace();
