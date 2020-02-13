@@ -33,10 +33,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -222,6 +219,10 @@ public class LoginController implements Initializable {
         System.out.println("hello");
         Client c= new Client(-1,usernameField.getText(),nameField.getText(),emailField.getText(),passwordField.getText());
         ClientHelper.addClient(c);
+        Alert a = new Alert(Alert.AlertType.CONFIRMATION);
+        a.setContentText("Inscription effectue avec succes !");
+        a.show();
+
     }
 
     public void registre2(ActionEvent actionEvent) {

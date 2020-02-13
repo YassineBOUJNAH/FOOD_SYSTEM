@@ -42,7 +42,7 @@
       </ScrollPane>
       <Label layoutX="66.0" layoutY="221.0" prefHeight="65.0" prefWidth="186.0" text="Historique d'achat">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font>
          <graphic>
             <FontAwesomeIconView glyphName="SHOPPING_CART" size="30" wrappingWidth="29.0" />

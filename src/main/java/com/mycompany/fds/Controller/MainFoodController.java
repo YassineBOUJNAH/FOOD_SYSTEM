@@ -53,7 +53,7 @@ public class MainFoodController implements Initializable {
             }});
 
             listeRepas.setOrientation(Orientation.HORIZONTAL);
-            listeRepas.setFocusTraversable(true);
+            listeRepas.setFocusTraversable(false);
             listeRepas.getStylesheets().add("/styles/Styles.css");
             listeRepas.getStyleClass().add("listeRepas");
 //
