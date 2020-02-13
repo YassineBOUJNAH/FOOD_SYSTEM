@@ -114,7 +114,7 @@ public class CurrentTrackController implements Initializable {
                     e.printStackTrace();
                 }
             });
-        }, 0, 8, TimeUnit.SECONDS);
+        }, 0, 10, TimeUnit.SECONDS);
 
 
         } catch (Exception e) {
