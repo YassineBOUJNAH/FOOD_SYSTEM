@@ -1,10 +1,15 @@
 .button {
     -fx-font-weight: bold;
 }
+/* Image view Food List*/
+.d{
+    -fx-font-family: "Segoe UI";
+}
 .d:hover{
     -fx-border-color: #990099;
     -fx-border-width: 0px 0px 3px 0px;
 }
+
 .p:hover{
     -fx-border-color: #009966;
     -fx-border-width: 0px 0px 3px 0px;
@@ -14,29 +19,37 @@
     -fx-border-width: 0px 0px 3px 0px;
 }
 .h{
+    -fx-background-color: white;
+    -fx-font-color: white;
     -fx-border-radius: 3px;
-        -fx-border-color: black;
-           -fx-background-color: #ffffff;
-   -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
-       -fx-background-radius: 3px;
+    /*
+    -fx-border-radius: 3px;
+    -fx-border-color: #1abc9c;
+    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+    -fx-background-radius: 3px;
+    */
    }
-.h:hover{
-   -fx-background-color: #f8ecc2;
-}
+
 .listeRepas{
     -fx-border-radius: 3px;
-        -fx-border-color: black;
-           -fx-background-color: #cbc4c3;
-   -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
-       -fx-background-radius: 3px;
+    -fx-border-color: #2ecc71;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+    -fx-background-radius: 3px;
 }
-.img{
+.listeRepas:filled:hover {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: black;
+}
+
+.imageRepas{
        -fx-background-radius: 3px;
        -fx-border-radius: 3px;
 }
 
 .imageOval{
-            -fx-border-radius: 50px;
+        -fx-border-radius: 50px;
 }
 
 .btn{
@@ -53,4 +66,33 @@
 }
 .d{
 
+}
+
+.confirmer{
+    -fx-border-radius: 25px;
+    -fx-border-color: #27ae60;
+    -fx-font-size: 14px;
+}
+.confirmer:hover{
+    -fx-background-color: #27ae60;
+}
+.afficher{
+    -fx-border-radius: 25px;
+    -fx-border-color: #f1c40f;
+    -fx-font-size: 14px;
+}
+.afficher:hover{
+    -fx-background-color: #f1c40f;
+}
+.tracker{
+    -fx-border-radius: 25px;
+    -fx-border-color: #c0392b;
+    -fx-font-size: 14px;
+}
+.tracker:hover{
+    -fx-background-color: #c0392b;
+}
+
+.adresse:focus{
+    -fx-background-color: #c0392b;
 }

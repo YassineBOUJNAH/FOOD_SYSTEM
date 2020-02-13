@@ -46,11 +46,12 @@ public class FoodCard {
         image.setFitWidth(144);
         image.setPickOnBounds(true);
         image.setLayoutX(0);
+        image.getStyleClass().add("imageRepas");
 
 
         Label lab = new Label();
         lab.setLayoutX(5);
-        lab.setLayoutY(100);
+        lab.setLayoutY(100); //100
         lab.setPrefHeight(44);
         lab.setPrefWidth(140);
         lab.setText(" "+r1.getNomRepas());
@@ -60,7 +61,7 @@ public class FoodCard {
 
         Label lab2 = new Label();
         lab2.setLayoutX(5);
-        lab2.setLayoutY(120);
+        lab2.setLayoutY(120); //120
         lab2.setPrefHeight(44);
         lab2.setPrefWidth(140);
         lab2.setText(r1.getPrix()+"DH "+r1.getDescription());
