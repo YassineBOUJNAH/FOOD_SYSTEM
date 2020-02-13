@@ -73,13 +73,13 @@ public class CurrentTrackController implements Initializable {
 
             //creating the line chart with two axis created above
             final LineChart<String, Number> lineChart = new LineChart<>(xAxis, yAxis);
-            lineChart.setTitle("Realtime JavaFX Charts");
+            lineChart.setTitle("Temperature du repas");
             lineChart.setAnimated(true); // disable animations
             //defining a series to display data
             XYChart.Series<String, Number> series = new XYChart.Series<>();
             series.setName("Temperature en Celcius");
-            lineChart.setPrefWidth(300);
-            lineChart.setPrefHeight(200);
+            lineChart.setPrefWidth(500);
+            lineChart.setPrefHeight(350);
             // add series to chart
             lineChart.getData().add(series);
             pane.getChildren().add(lineChart);

@@ -50,7 +50,7 @@ public class PanierFoodController implements Initializable {
     @FXML
     private TableColumn<Commande,String> col_date;
 
-
+    public static ObservableList<Commande> table_data = FXCollections.observableArrayList();
 
     Connection con = null;
     PreparedStatement preparedStatement = null;
@@ -84,6 +84,17 @@ public class PanierFoodController implements Initializable {
         trackerButton.setVisible(true);
         trackerButton.toFront();
         afficherButton.setVisible(false);
+        Stage primaryStage = new Stage();
+        FXMLLoader loader = new FXMLLoader();
+        Parent root;
+        try {
+            root = loader.load(FoodCard.class.getResource("/fxml/adress.fxml").openStream());
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     public void trackerAction(MouseEvent mouseEvent) {
@@ -112,7 +123,7 @@ public class PanierFoodController implements Initializable {
         col_date.setCellValueFactory(new PropertyValueFactory<>("date"));
     }
     public void loadData() {
-        ObservableList<Commande> table_data = FXCollections.observableArrayList();
+
         String a, d;
         Float t;
         int i;
@@ -125,7 +136,7 @@ public class PanierFoodController implements Initializable {
             boolean r;
            while (resultSet.next()) {
                System.out.println(resultSet.getString("address"));
-                Commande c = new Commande(String.valueOf(resultSet.getInt("id")),resultSet.getString("address"),resultSet.getString("date"),resultSet.getString("prix"),resultSet.getInt("client"));
+                Commande c = new Commande(String.valueOf(resultSet.getInt("id")),resultSet.getString("address"),resultSet.getString("date"),resultSet.getString("prix")+" DH",resultSet.getInt("client"));
                System.out.println(c.getPrix()+c.getClient()+c.getAddress()+"");
                table_data.add(c);
             }
