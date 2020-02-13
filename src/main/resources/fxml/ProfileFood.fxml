@@ -13,50 +13,65 @@
 
 <AnchorPane layoutX="20" prefHeight="500.0" prefWidth="900.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.fds.Controller.ProfileFoodController">
    <children>
-      <Pane layoutX="-20.0" prefHeight="500.0" prefWidth="921.0" style="-fx-background-color: #f7f7f7;">
+      <Pane layoutX="-20.0" prefHeight="500.0" prefWidth="921.0" style="-fx-background-color: white;">
          <children>
-            <JFXButton fx:id="update" layoutX="284.0" layoutY="384.0" styleClass="btn" text="Update" textFill="WHITE" />
-            <JFXButton fx:id="delete" layoutX="208.0" layoutY="383.0" styleClass="btnError" text="Delete" textFill="WHITE" />
-            <Label fx:id="password" layoutX="301.0" layoutY="347.0" text="123456" />
-            <Text layoutX="185.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Votre id">
+            <JFXButton fx:id="update" layoutX="277.0" layoutY="431.0" prefHeight="32.0" prefWidth="96.0" styleClass="confirmer" text="Update" />
+            <JFXButton fx:id="delete" layoutX="152.0" layoutY="431.0" prefHeight="32.0" prefWidth="96.0" styleClass="tracker" text="Delete" />
+            <Label fx:id="password" layoutX="299.0" layoutY="371.0" text="123456">
                <font>
-                  <Font name="Segoe UI" size="14.0" />
+                  <Font size="16.0" />
+               </font></Label>
+            <Text layoutX="171.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Votre id">
+               <font>
+                  <Font name="Segoe UI" size="16.0" />
                </font>
             </Text>
-            <Text layoutX="185.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
+            <Text layoutX="173.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
                <font>
-                  <Font name="Segoe UI" size="14.0" />
+                  <Font name="Segoe UI" size="16.0" />
                </font>
             </Text>
-            <Text layoutX="185.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom">
+            <Text layoutX="172.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom">
                <font>
-                  <Font name="Segoe UI" size="14.0" />
+                  <Font name="Segoe UI" size="16.0" />
                </font>
             </Text>
-            <Text layoutX="186.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+            <Text layoutX="172.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
                <font>
-                  <Font name="Segoe UI" size="14.0" />
+                  <Font name="Segoe UI" size="16.0" />
                </font>
             </Text>
-            <Text layoutX="186.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+            <Text layoutX="168.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
                <font>
-                  <Font name="Segoe UI" size="14.0" />
+                  <Font name="Segoe UI" size="16.0" />
                </font>
             </Text>
-            <Label fx:id="email" layoutX="301.0" layoutY="315.0" text="email@.com" />
-            <Label fx:id="prenom" layoutX="300.0" layoutY="283.0" text="Nafil" />
-            <Label fx:id="nom" layoutX="300.0" layoutY="256.0" text="Rachad" />
-            <Label fx:id="id" layoutX="301.0" layoutY="226.0" text="011" />
-            <Text layoutX="653.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier votre informations">
+            <Label fx:id="email" layoutX="289.0" layoutY="319.0" text="email@.com">
                <font>
-                  <Font name="Segoe UI" size="12.0" />
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="prenom" layoutX="316.0" layoutY="275.0" text="Nafil">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="nom" layoutX="307.0" layoutY="229.0" text="Rachad">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="id" layoutX="319.0" layoutY="185.0" text="011">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Text layoutX="622.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier vos informations">
+               <font>
+                  <Font name="Segoe UI" size="20.0" />
                </font>
             </Text>
-            <JFXPasswordField fx:id="updatePassword" focusColor="#2980b9" layoutX="656.0" layoutY="345.0" promptText="votre pass" text="password" />
-            <JFXTextField id="inputProfile" fx:id="updateEmail" focusColor="#2980b9" layoutX="657.0" layoutY="311.0" promptText="Votre email" />
-            <JFXTextField id="inputProfile" fx:id="updatePrenom" focusColor="#2980b9" layoutX="658.0" layoutY="273.0" promptText="Votre prénom" />
-            <JFXTextField id="inputProfile" fx:id="updateNom" focusColor="#2980b9" layoutX="661.0" layoutY="234.0" promptText="Votre nom" />
-            <JFXButton fx:id="update1" layoutX="694.0" layoutY="385.0" styleClass="btn" text="Valider" textFill="WHITE" />
+            <JFXPasswordField fx:id="updatePassword" focusColor="#2980b9" layoutX="622.0" layoutY="368.0" prefHeight="32.0" prefWidth="227.0" promptText="votre pass" />
+            <JFXTextField id="inputProfile" fx:id="updateEmail" focusColor="#2980b9" layoutX="622.0" layoutY="316.0" prefHeight="32.0" prefWidth="227.0" promptText="Votre email" />
+            <JFXTextField id="inputProfile" fx:id="updatePrenom" focusColor="#2980b9" layoutX="622.0" layoutY="271.0" prefHeight="32.0" prefWidth="227.0" promptText="Votre prénom" />
+            <JFXTextField id="inputProfile" fx:id="updateNom" focusColor="#2980b9" layoutX="622.0" layoutY="224.0" prefHeight="32.0" prefWidth="227.0" promptText="Votre nom" />
+            <JFXButton fx:id="update1" layoutX="688.0" layoutY="431.0" prefHeight="32.0" prefWidth="96.0" styleClass="confirmer" text="Valider" />
          </children>
       </Pane>
       <Pane layoutX="-20.0" prefHeight="160.0" prefWidth="920.0" style="-fx-background-color: #dfe3ee;">
