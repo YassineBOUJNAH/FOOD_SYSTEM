@@ -46,7 +46,7 @@ public class RestaurantCard {
         lab.setAlignment(Pos.CENTER);
 
         Label lab2 = new Label();
-        lab2.setLayoutX(50); //5
+        lab2.setLayoutX(5); //5
         lab2.setLayoutY(120);
         lab2.setPrefHeight(44);
         lab2.setPrefWidth(140);
