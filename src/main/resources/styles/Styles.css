@@ -18,9 +18,12 @@
     -fx-border-color: #cc0033;
     -fx-border-width: 0px 0px 3px 0px;
 }
+.h:hover{
+    -fx-background-color: #3498db;
+}
 .h{
     -fx-background-color: white;
-    -fx-font-color: white;
+    -fx-font-color: black;
     -fx-border-radius: 3px;
     /*
     -fx-border-radius: 3px;
@@ -31,6 +34,7 @@
     */
    }
 
+/*
 .listeRepas{
     -fx-border-radius: 3px;
     -fx-border-color: #2ecc71;
@@ -38,10 +42,13 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
     -fx-background-radius: 3px;
 }
+
+/*
 .listeRepas:filled:hover {
     -fx-background-color: #2ecc71;
     -fx-text-fill: black;
 }
+*/
 
 .imageRepas{
        -fx-background-radius: 3px;

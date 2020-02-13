@@ -5,6 +5,7 @@ import com.lynden.gmapsfx.javascript.object.*;
 import com.mycompany.fds.Helper;
 import com.mycompany.fds.View.FoodCard;
 
+import com.mycompany.fds.model.SendSMS;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -106,7 +107,7 @@ public class CurrentTrackController implements Initializable {
                     st2= finalBr2.readLine();
                     if (st == null) {
                         Alert a = new Alert(Alert.AlertType.CONFIRMATION);
-                        a.setContentText("Votre Commande est arrive");
+                        a.setContentText("Votre Commande est arrivé");
                         a.setOnCloseRequest(new EventHandler<DialogEvent>() {
                             @Override
                             public void handle(DialogEvent event) {
@@ -118,6 +119,7 @@ public class CurrentTrackController implements Initializable {
                         a.show();
                         scheduledExecutorService.shutdown();
                         //message whatsup
+                        SendSMS.sendMessage();
                     }else {
                         mapView.getEngine().load("https://www.google.com/maps/dir/"+st2);
                         System.out.println(st);

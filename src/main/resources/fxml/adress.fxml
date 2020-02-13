@@ -23,7 +23,7 @@
          <font>
             <Font name="Segoe UI Bold" size="15.0" />
          </font></Button>
-      <JFXTextField fx:id="text" alignment="CENTER" focusColor="#d4413f" labelFloat="true" layoutX="122.0" layoutY="246.0" prefHeight="50.0" prefWidth="377.0" promptText="Avenue Mohamed Ben Abdellah Regragui, Rabat">
+      <JFXTextField fx:id="text" alignment="CENTER" focusColor="#d4413f" labelFloat="true" layoutX="122.0" layoutY="246.0" prefHeight="50.0" prefWidth="377.0" promptText="ex: Avenue Mohamed Ben Abdellah Regragui, Ensias, Rabat">
          <font>
             <Font name="Segoe UI" size="12.0" />
          </font></JFXTextField>

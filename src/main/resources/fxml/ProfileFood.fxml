@@ -15,8 +15,8 @@
    <children>
       <Pane layoutX="-20.0" prefHeight="500.0" prefWidth="921.0" style="-fx-background-color: white;">
          <children>
-            <JFXButton fx:id="update" layoutX="277.0" layoutY="431.0" prefHeight="32.0" prefWidth="96.0" styleClass="confirmer" text="Update" />
-            <JFXButton fx:id="delete" layoutX="152.0" layoutY="431.0" prefHeight="32.0" prefWidth="96.0" styleClass="tracker" text="Delete" />
+            <JFXButton fx:id="update" layoutX="277.0" layoutY="431.0" onAction="#getInfo" prefHeight="32.0" prefWidth="96.0" styleClass="confirmer" text="Update" />
+            <JFXButton fx:id="delete" layoutX="152.0" layoutY="431.0" onAction="#deleteInfo" prefHeight="32.0" prefWidth="96.0" styleClass="tracker" text="Delete" />
             <Label fx:id="password" layoutX="299.0" layoutY="371.0" text="123456">
                <font>
                   <Font size="16.0" />
@@ -71,7 +71,7 @@
             <JFXTextField id="inputProfile" fx:id="updateEmail" focusColor="#2980b9" layoutX="622.0" layoutY="316.0" prefHeight="32.0" prefWidth="227.0" promptText="Votre email" />
             <JFXTextField id="inputProfile" fx:id="updatePrenom" focusColor="#2980b9" layoutX="622.0" layoutY="271.0" prefHeight="32.0" prefWidth="227.0" promptText="Votre prénom" />
             <JFXTextField id="inputProfile" fx:id="updateNom" focusColor="#2980b9" layoutX="622.0" layoutY="224.0" prefHeight="32.0" prefWidth="227.0" promptText="Votre nom" />
-            <JFXButton fx:id="update1" layoutX="688.0" layoutY="431.0" prefHeight="32.0" prefWidth="96.0" styleClass="confirmer" text="Valider" />
+            <JFXButton fx:id="update1" layoutX="688.0" layoutY="431.0" onAction="#updateInfo" prefHeight="32.0" prefWidth="96.0" styleClass="confirmer" text="Valider" />
          </children>
       </Pane>
       <Pane layoutX="-20.0" prefHeight="160.0" prefWidth="920.0" style="-fx-background-color: #dfe3ee;">
