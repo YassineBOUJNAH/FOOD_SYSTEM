@@ -32,9 +32,9 @@ import java.util.Properties;
 import java.util.ResourceBundle;
 
 public class PanierFoodController implements Initializable {
-    public JFXButton afficherButton;
-    public JFXButton confirmerButton;
-    public JFXButton trackerButton;
+    public  JFXButton afficherButton;
+    public  JFXButton confirmerButton;
+    public  JFXButton trackerButton;
     public TableView<Commande> tablePanier2;
 
 
@@ -100,6 +100,9 @@ public class PanierFoodController implements Initializable {
     public void trackerAction(MouseEvent mouseEvent) {
         Stage primaryStage = new Stage();
         FXMLLoader loader = new FXMLLoader();
+        trackerButton.setVisible(false);
+        afficherButton.setVisible(true);
+        confirmerButton.setVisible(true);
         Parent root;
        try {
             root = loader.load(FoodCard.class.getResource("/fxml/currentTrack.fxml").openStream());

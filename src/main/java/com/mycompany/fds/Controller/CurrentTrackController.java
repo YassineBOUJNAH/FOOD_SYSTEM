@@ -6,6 +6,7 @@ import com.mycompany.fds.Helper;
 import com.mycompany.fds.View.FoodCard;
 
 import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -14,12 +15,15 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.DialogEvent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.URL;
@@ -101,6 +105,17 @@ public class CurrentTrackController implements Initializable {
                     st = finalBr.readLine();
                     st2= finalBr2.readLine();
                     if (st == null) {
+                        Alert a = new Alert(Alert.AlertType.CONFIRMATION);
+                        a.setContentText("Votre Commande est arrive");
+                        a.setOnCloseRequest(new EventHandler<DialogEvent>() {
+                            @Override
+                            public void handle(DialogEvent event) {
+
+                                Stage stage = (Stage) mapView.getScene().getWindow();
+                                stage.close();
+                            }
+                        });
+                        a.show();
                         scheduledExecutorService.shutdown();
                         //message whatsup
                     }else {
