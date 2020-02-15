@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class Iot implements  Runnable{
+public class IotTemperature implements  Runnable{
     static String st ="";
 
     @Override

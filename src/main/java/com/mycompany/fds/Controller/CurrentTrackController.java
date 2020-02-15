@@ -1,29 +1,21 @@
 package com.mycompany.fds.Controller;
 
-import com.lynden.gmapsfx.GoogleMapView;
 import com.lynden.gmapsfx.javascript.object.*;
-import com.mycompany.fds.Helper;
-import com.mycompany.fds.Iot;
-import com.mycompany.fds.View.FoodCard;
+import com.mycompany.fds.IotLocalisation;
+import com.mycompany.fds.IotTemperature;
 
 import com.mycompany.fds.model.SendSMS;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.DialogEvent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
@@ -33,8 +25,6 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
-import java.util.Timer;
-import java.util.TimerTask;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -52,17 +42,22 @@ public class CurrentTrackController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources)  {
 
-        Iot it = new Iot();
+        IotTemperature it = new IotTemperature();
         Thread th = new Thread(it);
         th.start();
 
+        IotLocalisation it2= new IotLocalisation();
+        Thread th2 = new Thread(it2);
+        th2.start();
 
-        File file2 = new File("src/main/resources/iotFiles/metreSensor");
+
         BufferedReader br = null;
         BufferedReader br2 = null;
         String hote = "127.0.0.1" ;
         int port = 1000 ;
+        int port2 = 2000 ;
         Socket soc = null;
+        Socket soc2 = null;
         mapView.toBack();
       //  pan2.toFront();
 
@@ -76,9 +71,11 @@ public class CurrentTrackController implements Initializable {
 ////////////////////////////
         try {
             soc = new Socket(hote, port);
+            soc2 = new Socket(hote, port2);
             InputStream flux = soc.getInputStream();
+            InputStream flux2 = soc2.getInputStream();
             br = new BufferedReader(new InputStreamReader(flux));
-            br2 = new BufferedReader(new FileReader(file2));
+            br2 = new BufferedReader(new InputStreamReader(flux2));
 //defining the axes
             final CategoryAxis xAxis = new CategoryAxis(); // we are gonna plot against time
             final NumberAxis yAxis = new NumberAxis();
