@@ -3,6 +3,7 @@ package com.mycompany.fds.Controller;
 import com.lynden.gmapsfx.GoogleMapView;
 import com.lynden.gmapsfx.javascript.object.*;
 import com.mycompany.fds.Helper;
+import com.mycompany.fds.Iot;
 import com.mycompany.fds.View.FoodCard;
 
 import com.mycompany.fds.model.SendSMS;
@@ -27,6 +28,7 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.net.Socket;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -49,10 +51,18 @@ public class CurrentTrackController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources)  {
-        File file = new File("src/main/resources/iotFiles/chaleurSensor");
+
+        Iot it = new Iot();
+        Thread th = new Thread(it);
+        th.start();
+
+
         File file2 = new File("src/main/resources/iotFiles/metreSensor");
         BufferedReader br = null;
         BufferedReader br2 = null;
+        String hote = "127.0.0.1" ;
+        int port = 1000 ;
+        Socket soc = null;
         mapView.toBack();
       //  pan2.toFront();
 
@@ -65,8 +75,9 @@ public class CurrentTrackController implements Initializable {
 
 ////////////////////////////
         try {
-
-            br = new BufferedReader(new FileReader(file));
+            soc = new Socket(hote, port);
+            InputStream flux = soc.getInputStream();
+            br = new BufferedReader(new InputStreamReader(flux));
             br2 = new BufferedReader(new FileReader(file2));
 //defining the axes
             final CategoryAxis xAxis = new CategoryAxis(); // we are gonna plot against time
@@ -105,7 +116,8 @@ public class CurrentTrackController implements Initializable {
                 try {
                     st = finalBr.readLine();
                     st2= finalBr2.readLine();
-                    if (st == null) {
+                    Integer t= Integer.parseInt(st);
+                    if (t == -1) {
                         Alert a = new Alert(Alert.AlertType.CONFIRMATION);
                         a.setContentText("Votre Commande est arrivé");
                         a.setOnCloseRequest(new EventHandler<DialogEvent>() {
