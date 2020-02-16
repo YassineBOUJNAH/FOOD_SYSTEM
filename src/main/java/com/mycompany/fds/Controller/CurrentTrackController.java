@@ -15,7 +15,9 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DialogEvent;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Font;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
@@ -28,6 +30,7 @@ import java.util.ResourceBundle;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class CurrentTrackController implements Initializable {
     public Label chaleurLabel;
@@ -36,11 +39,42 @@ public class CurrentTrackController implements Initializable {
     static  String st2="";
     public AnchorPane pane;
     public WebView mapView;
-  //  public Pane pan2;
+    public AnchorPane progresse;
+    //  public Pane pan2;
     GoogleMap map;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)  {
+        progresse.toFront();
+        ProgressIndicator pb = new ProgressIndicator();
+        pb.setPrefSize(250,250);
+        pb.setLayoutX(310);
+        pb.setLayoutY(210);
+        Label lab2 = new Label("Votre commande est en cours de préparation");
+        lab2.setPrefSize(700,60);
+        lab2.setLayoutX(140);
+        lab2.setLayoutY(520);
+        final double MAX_FONT_SIZE = 30.0; // define max font size you need
+        lab2.setFont(new Font(MAX_FONT_SIZE));
+        progresse.getChildren().addAll(pb,lab2);
+        ScheduledExecutorService scheduledExecutorService2;
+        scheduledExecutorService2 = Executors.newSingleThreadScheduledExecutor();
+        scheduledExecutorService2.scheduleAtFixedRate(() -> {
+            // get a random integer between 0-10
+
+            // Update the chart
+            Platform.runLater(() -> {
+                System.out.println("ff");
+                if(st != ""){
+                    progresse.toBack();
+                    progresse.getChildren().clear();
+                }
+            });
+        }, 0, 2, TimeUnit.SECONDS);
+
+
+
+
 
         IotTemperature it = new IotTemperature();
         Thread th = new Thread(it);
@@ -140,7 +174,7 @@ public class CurrentTrackController implements Initializable {
                     e.printStackTrace();
                 }
             });
-        }, 0, 10, TimeUnit.SECONDS);
+        }, 5, 10, TimeUnit.SECONDS);
 
 
         } catch (Exception e) {
