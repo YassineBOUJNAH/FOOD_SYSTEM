@@ -6,8 +6,8 @@ import com.twilio.type.PhoneNumber;
 
 public class SendSMS {
     // Find your Account Sid and Token at twilio.com/user/account
-    public static final String ACCOUNT_SID = "AC39d50b975902a2a3c06cc2d8986e3fc5";
-    public static final String AUTH_TOKEN = "c5960b34c1f272c0999d3b8707212954";
+    public static final String ACCOUNT_SID = "xxxxxxxxxxx";
+    public static final String AUTH_TOKEN = "xxxxxxxxxxx";
 
     public static void main(String[] args) {
         sendMessage();
