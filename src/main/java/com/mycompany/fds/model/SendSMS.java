@@ -17,8 +17,8 @@ public class SendSMS {
     public static void sendMessage() {
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
         Message message = Message.creator(
-                new com.twilio.type.PhoneNumber("whatsapp:+212654173553"),
-                new com.twilio.type.PhoneNumber("whatsapp:+14155238886"),
+                new com.twilio.type.PhoneNumber("whatsapp:+xxxxxxxx"),
+                new com.twilio.type.PhoneNumber("whatsapp:+xxxxxxxxx"),
                 "Bonjour, votre commande est arrivée !")
                 .create();
         System.out.println(message.getSid());
